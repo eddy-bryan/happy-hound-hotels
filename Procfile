@@ -1,1 +1,1 @@
-web: gunicorn codestar.wsgi
+web: gunicorn happy_hound_hotels.wsgi
