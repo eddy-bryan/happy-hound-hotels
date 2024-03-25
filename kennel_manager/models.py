@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 class Kennel(models.Model):
     name = models.CharField(max_length=50, unique=True)
@@ -10,5 +9,5 @@ class Kennel(models.Model):
     city = models.CharField(max_length=50)
     county = models.CharField(max_length=50)
     postal_code = models.CharField(max_length=10)
-    contact_number = models.CharField(max_length=11)
+    contact_number = models.CharField(max_length=11, unique=True)
     price_per_night = models.DecimalField(max_digits=6, decimal_places=2)
