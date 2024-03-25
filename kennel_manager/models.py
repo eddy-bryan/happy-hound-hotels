@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 class Kennel(models.Model):
     name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=50, unique=True)
-    description = models.TextField(max_length=200)
+    description = models.TextField(max_length=400)
     address_line_1 = models.CharField(max_length=50)
     address_line_2 = models.CharField(max_length=50, blank=True)
     city = models.CharField(max_length=50)
