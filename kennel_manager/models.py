@@ -1,4 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import User
+from account_management.models import PetProfile
+
+STATUS = ((0, "Pending"), (1, "Confirmed"), (2, "Cancelled"))
 
 class Kennel(models.Model):
     name = models.CharField(max_length=50, unique=True)
@@ -11,3 +15,11 @@ class Kennel(models.Model):
     postal_code = models.CharField(max_length=10)
     contact_number = models.CharField(max_length=11, unique=True)
     price_per_night = models.DecimalField(max_digits=6, decimal_places=2)
+
+class Booking(models.Model):
+    customer = models.ForeignKey(User, on_delete=models.CASCADE)
+    pet_name = models.ForeignKey(PetProfile, on_delete=models.CASCADE)
+    kennel = models.ForeignKey(Kennel, on_delete=models.CASCADE)
+    check_in_date = models.DateField()
+    check_out_date = models.DateField()
+    status = models.IntegerField(choices=STATUS, default=0)
