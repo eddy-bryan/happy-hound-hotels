@@ -3,8 +3,6 @@ from django.contrib.auth.models import User
 from account_management.models import PetProfile
 from datetime import date
 
-STATUS = ((0, "Pending"), (1, "Confirmed"), (2, "Cancelled"))
-
 class Kennel(models.Model):
     name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=50, unique=True)
@@ -19,9 +17,8 @@ class Kennel(models.Model):
     spaces = models.IntegerField()
 
 class Booking(models.Model):
-    customer = models.ForeignKey(User, on_delete=models.CASCADE)
-    pet_name = models.ForeignKey(PetProfile, on_delete=models.CASCADE)
+    customer = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    pet_name = models.ManyToManyField(PetProfile)
     kennel = models.ForeignKey(Kennel, on_delete=models.CASCADE)
     check_in_date = models.DateField()
     check_out_date = models.DateField()
-    status = models.IntegerField(choices=STATUS, default=0)
