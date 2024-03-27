@@ -16,9 +16,45 @@ class Kennel(models.Model):
     price_per_night = models.DecimalField(max_digits=6, decimal_places=2)
     spaces = models.IntegerField()
 
+
 class Booking(models.Model):
     customer = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     pet_name = models.ManyToManyField(PetProfile)
     kennel = models.ForeignKey(Kennel, on_delete=models.CASCADE)
     check_in_date = models.DateField()
     check_out_date = models.DateField()
+
+
+    def is_space_available(self):
+        """
+        Check if space is available for booking in the kennel between the specified dates.
+        """
+        # Calculate available spaces for the kennel between check-in and check-out dates
+        bookings_within_dates = Booking.objects.filter(
+            kennel=self.kennel,
+            check_in_date__lte=self.check_out_date,
+            check_out_date__gte=self.check_in_date
+        )
+        booked_spaces = sum(booking.pet_name.count() for booking in bookings_within_dates)
+        return self.kennel.spaces - booked_spaces > 0
+
+
+    def is_valid_dates(self):
+        """
+        Check if the booking dates are valid and not in the past.
+        """
+        return self.check_in_date > date.today() and self.check_out_date > self.check_in_date
+
+
+    def save(self, *args, **kwargs):
+        """
+        Override the save method to validate booking dates and available spaces.
+        """
+        if self.is_valid_dates() and self.is_space_available():
+            super().save(*args, **kwargs)
+        else:
+            # Raise validation error if dates are invalid or no space is available
+            if not self.is_valid_dates():
+                raise ValueError("Booking dates must be valid and not in the past")
+            elif not self.is_space_available():
+                raise ValueError("No space available for booking within the specified dates")
