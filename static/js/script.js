@@ -5,9 +5,9 @@ $(function() {
             // Parse the selected check-in date
             var checkInDate = new Date(selectedDate);
             
-            // Calculate the minimum check-out date (check-in date + 2 days)
+            // Calculate the minimum check-out date (check-in date + 1 days)
             var minCheckOutDate = new Date(checkInDate);
-            minCheckOutDate.setDate(minCheckOutDate.getDate() + 2);
+            minCheckOutDate.setDate(minCheckOutDate.getDate() + 1);
             
             // Update minDate option of check-out date picker
             $("#id_check_out_date").datepicker("option", "minDate", minCheckOutDate);
