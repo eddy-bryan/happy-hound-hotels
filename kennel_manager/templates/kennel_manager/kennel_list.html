@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kennel List</title>
-</head>
-<body>
-    <h1>Kennels</h1>
-    {% for kennel in kennels %}
-    <h2>{{ kennel.name }}</h2>
-    <p>{{ kennel.description }}</p>
-    <p>{{ kennel.city }}</p>
-    <p>{{ kennel.price_per_night }}</p>
-    {% endfor %}
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Kennels</h1>
+{% for kennel in kennels %}
+<h2>{{ kennel.name }}</h2>
+<p>{{ kennel.description }}</p>
+<p>{{ kennel.city }}</p>
+<p>{{ kennel.price_per_night }}</p>
+{% endfor %}
+{% endblock %}

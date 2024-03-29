@@ -1,7 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
 
-def account(request):
-    return HttpResponse("Account management")
-
-# Create your views here.
+class UserProfile(generic.TemplateView):
+    template_name = 'account_management/user_profile.html'
