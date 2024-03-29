@@ -2,5 +2,24 @@
 {% load static %}
 
 {% block content %}
-<h1>Profile</h1>
+<div class="container">
+    <h1>User Profile</h1>
+    <div class="profile-info">
+        <div class="profile-image">
+            <img src="#" alt="Profile Image">
+        </div>
+        <div class="profile-details">
+            <p><strong>Name:</strong> {{ user_profile.username }}</p>
+            <p><strong>Address:</strong> {{ user_profile.address_line_1 }}<br>
+                {{ user_profile.address_line_2 }}<br>
+                {{ user_profile.city }}<br>
+                {{ user_profile.county }}<br>
+                {{ user_profile.postal_code }}</p>
+            <p><strong>Contact Number:</strong> {{ user_profile.contact_number }}</p>
+        </div>
+    </div>
+    <div class="pet-section">
+        <h2>Pets</h2>
+    </div>
+</div>
 {% endblock %}
