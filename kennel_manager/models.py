@@ -36,7 +36,7 @@ class Booking(models.Model):
             check_out_date__gte=self.check_in_date
         )
         booked_spaces = sum(booking.pet_name.count() for booking in bookings_within_dates)
-        return self.kennel.spaces - booked_spaces > 0
+        return self.kennel.spaces - booked_spaces >= self.pet_name.count()
 
 
     def is_valid_dates(self):
