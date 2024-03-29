@@ -1,3 +1,9 @@
+{% load static %}
+
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,12 +22,21 @@
         <div class="container-fluid col-8 d-flex justify-content-between">
             <a class="navbar-brand" href="#"><img src="../static/images/happy-hound-hotels-high-resolution-logo-transparent.png" alt="Happy Hound Hotels Logo" width="auto" height="60px"></a>
             <ul class="navbar-nav">
+                {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" aria-current="page" href="#">Account</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                 </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'account_signup' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
