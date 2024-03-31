@@ -20,6 +20,22 @@
     </div>
     <div class="pet-section">
         <h2>Pets</h2>
+        <ul>
+            <!-- Loop through user's pets -->
+            {% for pet in user_pets %}
+            <li>
+                <!-- Display breed image -->
+                <img src="#" alt="Breed Image">
+                <!-- Display pet's name -->
+                <p>{{ pet.pet_name }}</p>
+            </li>
+            {% endfor %}
+            <!-- Add Pet button -->
+            <li class="add-pet">
+                <img src="#" alt="Add Pet">
+                <p>Add Pet</p>
+            </li>
+        </ul>
     </div>
 </div>
 {% endblock %}
