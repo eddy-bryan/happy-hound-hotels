@@ -1,4 +1,7 @@
-.navbar {
+header {
     background-color: #ece5d5;
-    height: 70px;
+}
+
+footer {
+    background-color: #767A57;
 }
