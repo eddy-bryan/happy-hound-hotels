@@ -1,3 +1,10 @@
+// Get the current year
+var currentYear = new Date().getFullYear();
+
+// Update the text content of the span element with the current year
+document.getElementById("currentYear").textContent = currentYear;
+
+
 $(function() {
     $("#id_check_in_date").datepicker({
         minDate: 1,  // Minimum date is tomorrow

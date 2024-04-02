@@ -1,7 +1,52 @@
+.navbar {
+    height: 70px;
+}
+
 header {
     background-color: #ece5d5;
 }
 
 footer {
     background-color: #767A57;
+    height: 70px;
+}
+
+#github-link {
+    text-decoration: none;
+}
+
+footer a {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #9b9b9b;
+}
+
+.search-bar {
+    border: 2px solid #2e2e2e;
+    border-radius: 10px;
+    height: 55px;
+}
+
+.search-box {
+    padding: 10px;
+}
+
+.search-box label {
+    display: none;
+}
+
+.search-button {
+    padding: 0 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #3d3028;
+    color: #ffffff;
+    height: 35px;
+}
+
+.search-button:hover {
+    background-color: #63544b;
 }
