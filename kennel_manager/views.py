@@ -9,7 +9,7 @@ def home(request):
         if form.is_valid():
             check_in_date = form.cleaned_data['check_in_date']
             check_out_date = form.cleaned_data['check_out_date']
-            num_pets = form.cleaned_data['num_pets']
+            num_pets = int(form.cleaned_data['num_pets'])
             # Filter the queryset based on search criteria
             available_kennels = []
             for kennel in Kennel.objects.all():

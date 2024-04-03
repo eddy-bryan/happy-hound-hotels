@@ -2,26 +2,56 @@
 {% load static %}
 
 {% block content %}
-<div class="container mt-auto">
-    <!-- Kennel Search -->
-    <div class="row">
-        <div class="search-bar container-fluid col-8">
-            <form class="d-flex align-items-center justify-content-between" method="get">
-                <div class="form-group search-box col-2">
-                    <label for="id_check_in_date">Check in date:</label>
-                    {{ form.check_in_date }}
+<!-- This search bar is a modified design template from Colorlib (https://colorlib.com) -->
+<div id="booking" class="section">
+    <div class="section-center">
+        <div class="container">
+            <div class="row">
+                <div class="booking-form">
+                    <form method="get">
+                        <div class="row no-margin">
+                            <div class="col-md-8">
+                                <div class="row no-margin">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label for="id_check_in_date" class="form-label">Check in</label>
+                                            <div class="input-group d-flex align-items-center">
+                                                {{ form.check_in_date }}
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text p-0 border-0 bg-transparent"><i class="bi bi-calendar"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label for="id_check_out_date" class="form-label">Check out</label>
+                                            <div class="input-group d-flex align-items-center">
+                                                {{ form.check_out_date }}
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text p-0 border-0 bg-transparent"><i class="bi bi-calendar"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="id_num_pets" class="form-label">Pets</label>
+                                            {{ form.num_pets }}
+                                            <span class="select-arrow"><i class="bi bi-caret-down"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-btn">
+                                    <button class="submit-btn">Check availability</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group search-box col-2">
-                    <label for="id_check_out_date">Check out date:</label>
-                    {{ form.check_out_date }}
-                </div>
-                <div class="form-group search-box col-2">
-                    <label for="id_num_pets">Number of Pets:</label>
-                    {{ form.num_pets }}
-                </div>
-
-                <button type="submit" class="search-button">Search</button>
-            </form>
+            </div>
         </div>
     </div>
 </div>

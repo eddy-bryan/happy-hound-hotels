@@ -9,6 +9,18 @@ class NumberInputWithPlaceholder(forms.NumberInput):
             self.attrs['placeholder'] = placeholder
 
 class SearchForm(forms.Form):
-    check_in_date = forms.DateField(label='Check-in Date', widget=forms.DateInput(attrs={'placeholder': 'Check-in date'}))
-    check_out_date = forms.DateField(label='Check-out Date', widget=forms.DateInput(attrs={'placeholder': 'Check-out date'}))
-    num_pets = forms.IntegerField(min_value=1, label='Number of Pets', widget=NumberInputWithPlaceholder(attrs={'placeholder': 'Number of pets'}))
+    NUM_PETS_CHOICES = [(i, str(i)) for i in range(1, 11)]
+
+    check_in_date = forms.DateField(
+        label='Check-in Date',
+        widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'MM/DD/YYYY'})
+    )
+    check_out_date = forms.DateField(
+        label='Check-out Date',
+        widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'MM/DD/YYYY'})
+    )
+    num_pets = forms.ChoiceField(
+        choices=NUM_PETS_CHOICES,
+        label='Number of Pets',
+        widget=forms.Select(attrs={'class': 'form-control'})
+    )

@@ -19,9 +19,9 @@ $(function() {
             // Update minDate option of check-out date picker
             $("#id_check_out_date").datepicker("option", "minDate", minCheckOutDate);
         }
-    });
+    }).attr('readonly', 'readonly');
     
     $("#id_check_out_date").datepicker({
         minDate: 2  // Initial minimum date is 2 days from today
-    });
+    }).attr('readonly', 'readonly');
 });
