@@ -1,0 +1,322 @@
+[
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Pawsome Retreat Kennels",
+            "slug": "pawsome-retreat-kennels",
+            "description": "Pawsome Retreat Kennels, nestled in Woofshire's countryside, offers a serene haven for pets. Our team ensures personalized care, cozy bedding, play areas, and daily exercise sessions. We provide grooming, training, and vet care on request. Our facilities are clean, sanitized, ensuring guests' well-being. Trust us for top-quality pet care on your trip. Book now for peace of mind!",
+            "address_line_1": "1 Dogwood Lane",
+            "address_line_2": "Woofshire",
+            "city": "London",
+            "county": "Greater London",
+            "postal_code": "SW1A1AA",
+            "contact_number": "02012345678",
+            "price_per_night": 20.00,
+            "spaces": 10
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Happy Tails Boarding",
+            "slug": "happy-tails-boarding",
+            "description": "Happy Tails Boarding is the perfect place for your furry friends to stay while you're away. Our spacious facility offers comfortable accommodations, plenty of playtime, and lots of love and attention from our dedicated staff. We also offer grooming services and special amenities for your pet's comfort and enjoyment. Book your pet's stay with us today!",
+            "address_line_1": "25 Bark Street",
+            "address_line_2": "",
+            "city": "Manchester",
+            "county": "Greater Manchester",
+            "postal_code": "M11AA",
+            "contact_number": "01611234567",
+            "price_per_night": 25.00,
+            "spaces": 12
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Woof and Whiskers Retreat",
+            "slug": "woof-and-whiskers-retreat",
+            "description": "Woof and Whiskers Retreat is a premier dog boarding facility located in the heart of the countryside. We offer spacious accommodations, personalized care, and a range of amenities to ensure your pet's comfort and happiness during their stay. Our experienced staff provides plenty of exercise, playtime, and affection, so you can rest assured that your furry friend is in good hands. Book your pet's stay with us today!",
+            "address_line_1": "5 Pet Parade",
+            "address_line_2": "Countryside",
+            "city": "Birmingham",
+            "county": "West Midlands",
+            "postal_code": "B11AA",
+            "contact_number": "01212345678",
+            "price_per_night": 30.00,
+            "spaces": 8
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Fur-ever Friends Lodge",
+            "slug": "fur-ever-friends-lodge",
+            "description": "Fur-ever Friends Lodge offers a home away from home for your beloved pets. Our spacious facility features comfortable accommodations, plenty of play areas, and experienced staff dedicated to providing the best care possible. Whether your pet needs a cozy spot to relax or an adventure-filled stay, we have everything they need to feel happy and comfortable. Book your pet's stay with us today!",
+            "address_line_1": "8 Furry Lane",
+            "address_line_2": "",
+            "city": "Liverpool",
+            "county": "Merseyside",
+            "postal_code": "L11AA",
+            "contact_number": "01513456789",
+            "price_per_night": 35.00,
+            "spaces": 15
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Whisker Haven",
+            "slug": "whisker-haven",
+            "description": "Whisker Haven is a premium pet boarding facility designed to provide the ultimate comfort and care for your furry friends. Our spacious kennels, experienced staff, and personalized attention ensure that your pet feels right at home during their stay with us. From daily walks to plenty of playtime, we offer everything your pet needs to stay happy and healthy while you're away. Book your pet's stay with us today!",
+            "address_line_1": "10 Catnip Close",
+            "address_line_2": "",
+            "city": "Bristol",
+            "county": "Bristol",
+            "postal_code": "BS11AA",
+            "contact_number": "01174567890",
+            "price_per_night": 28.00,
+            "spaces": 10
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Paw-some Pals Kennels",
+            "slug": "paw-some-pals-kennels",
+            "description": "Paw-some Pals Kennels is dedicated to providing top-quality care for your furry friends. Our spacious facility, experienced staff, and personalized attention ensure that your pet feels safe, happy, and loved during their stay with us. From cozy accommodations to plenty of playtime, we offer everything your pet needs for a fun and relaxing stay. Book your pet's stay with us today!",
+            "address_line_1": "15 Wagging Way",
+            "address_line_2": "",
+            "city": "Leeds",
+            "county": "West Yorkshire",
+            "postal_code": "LS11AA",
+            "contact_number": "01135678901",
+            "price_per_night": 22.00,
+            "spaces": 10
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Furry Friends Lodge",
+            "slug": "furry-friends-lodge",
+            "description": "Furry Friends Lodge is the perfect destination for pets who deserve the best. Our luxury accommodations, attentive staff, and top-notch amenities ensure that your pet feels pampered and cared for during their stay with us. Whether your pet enjoys lounging in a cozy bed or playing in our spacious play areas, we provide everything they need for a happy and comfortable stay. Book your pet's stay with us today!",
+            "address_line_1": "20 Whisker Way",
+            "address_line_2": "Luxury District",
+            "city": "Glasgow",
+            "county": "Glasgow",
+            "postal_code": "G11AA",
+            "contact_number": "01416789012",
+            "price_per_night": 27.00,
+            "spaces": 14
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Tail Waggers Inn",
+            "slug": "tail-waggers-inn",
+            "description": "Tail Waggers Inn offers a home away from home for your furry friends. Our experienced staff provides personalized care, plenty of playtime, and all the comforts of home to ensure that your pet feels happy and loved during their stay with us. From cozy accommodations to daily walks, we offer everything your pet needs for a fun and relaxing stay. Book your pet's stay with us today!",
+            "address_line_1": "30 Bark Avenue",
+            "address_line_2": "",
+            "city": "Edinburgh",
+            "county": "Edinburgh",
+            "postal_code": "EH11AA",
+            "contact_number": "01317890123",
+            "price_per_night": 33.00,
+            "spaces": 12
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Pampered Paws Retreat",
+            "slug": "pampered-paws-retreat",
+            "description": "Pampered Paws Retreat offers a luxurious getaway for your furry friends. Our upscale accommodations, attentive staff, and personalized services ensure that your pet feels like royalty during their stay with us. From plush bedding to gourmet meals, we provide everything your pet needs for a relaxing and indulgent experience. Book your pet's stay with us today!",
+            "address_line_1": "35 Paw Print Place",
+            "address_line_2": "",
+            "city": "Cardiff",
+            "county": "Cardiff",
+            "postal_code": "CF11AA",
+            "contact_number": "02912345678",
+            "price_per_night": 40.00,
+            "spaces": 10
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Wagging Tails Lodge",
+            "slug": "wagging-tails-lodge",
+            "description": "Wagging Tails Lodge offers a warm and welcoming environment for your beloved pets. Our cozy accommodations, experienced staff, and personalized care ensure that your pet feels comfortable and loved during their stay with us. From daily walks to plenty of playtime, we provide everything your pet needs for a happy and enjoyable stay. Book your pet's stay with us today!",
+            "address_line_1": "40 Tail Spin Street",
+            "address_line_2": "",
+            "city": "Newcastle",
+            "county": "Tyne and Wear",
+            "postal_code": "NE11AA",
+            "contact_number": "01912345678",
+            "price_per_night": 35.00,
+            "spaces": 12
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Furry Haven",
+            "slug": "furry-haven",
+            "description": "Furry Haven is a premier pet boarding facility dedicated to providing the best care for your furry friends. Our spacious kennels, experienced staff, and personalized attention ensure that your pet feels safe, happy, and loved during their stay with us. From cozy accommodations to plenty of playtime, we offer everything your pet needs for a fun and relaxing stay. Book your pet's stay with us today!",
+            "address_line_1": "45 Whisker Lane",
+            "address_line_2": "",
+            "city": "Sheffield",
+            "county": "South Yorkshire",
+            "postal_code": "S11AA",
+            "contact_number": "01143456789",
+            "price_per_night": 30.00,
+            "spaces": 8
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Paw-sitively Purrfect Kennels",
+            "slug": "paw-sitively-purrfect-kennels",
+            "description": "Paw-sitively Purrfect Kennels is dedicated to providing top-quality care for your beloved pets. Our experienced staff, spacious accommodations, and personalized attention ensure that your pet feels happy, safe, and loved during their stay with us. From cozy beds to plenty of playtime, we offer everything your pet needs for a fun and relaxing stay. Book your pet's stay with us today!",
+            "address_line_1": "50 Paw Print Road",
+            "address_line_2": "",
+            "city": "Nottingham",
+            "county": "Nottinghamshire",
+            "postal_code": "NG11AA",
+            "contact_number": "01156789012",
+            "price_per_night": 25.00,
+            "spaces": 10
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Tail Waggers Retreat",
+            "slug": "tail-waggers-retreat",
+            "description": "Tail Waggers Retreat offers a peaceful retreat for pets in need of a home away from home. Our cozy accommodations, experienced staff, and personalized care ensure that your pet feels comfortable, relaxed, and loved during their stay with us. From daily walks to plenty of playtime, we provide everything your pet needs for a happy and enjoyable stay. Book your pet's stay with us today!",
+            "address_line_1": "55 Wagging Way",
+            "address_line_2": "",
+            "city": "Leicester",
+            "county": "Leicestershire",
+            "postal_code": "LE11AA",
+            "contact_number": "01167890123",
+            "price_per_night": 28.00,
+            "spaces": 10
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Whisker Wonderland",
+            "slug": "whisker-wonderland",
+            "description": "Whisker Wonderland offers a magical retreat for pets and their owners. Our enchanting facility, experienced staff, and personalized services ensure that your pet enjoys a truly special experience during their stay with us. From cozy accommodations to fun-filled activities, we provide everything your pet needs for a memorable and enjoyable stay. Book your pet's stay with us today!",
+            "address_line_1": "60 Catnip Crescent",
+            "address_line_2": "",
+            "city": "Oxford",
+            "county": "Oxfordshire",
+            "postal_code": "OX11AA",
+            "contact_number": "01865234567",
+            "price_per_night": 35.00,
+            "spaces": 12
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Furry Friends Retreat",
+            "slug": "furry-friends-retreat",
+            "description": "Furry Friends Retreat offers a home away from home for pets in need of a little extra love and care. Our experienced staff, spacious accommodations, and personalized attention ensure that your pet feels happy, safe, and loved during their stay with us. From cozy beds to plenty of playtime, we provide everything your pet needs for a fun and relaxing stay. Book your pet's stay with us today!",
+            "address_line_1": "65 Tail End Terrace",
+            "address_line_2": "",
+            "city": "Cambridge",
+            "county": "Cambridgeshire",
+            "postal_code": "CB11AA",
+            "contact_number": "01223345678",
+            "price_per_night": 30.00,
+            "spaces": 10
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Paws and Play Kennels",
+            "slug": "paws-and-play-kennels",
+            "description": "Paws & Play Kennels offers a fun and interactive environment for your furry friends. Our spacious accommodations, experienced staff, and personalized care ensure that your pet has a tail-wagging good time during their stay with us. From daily walks to plenty of playtime, we provide everything your pet needs for a happy and enjoyable stay. Book your pet's stay with us today!",
+            "address_line_1": "70 Doggy Drive",
+            "address_line_2": "",
+            "city": "Cardiff",
+            "county": "Cardiff",
+            "postal_code": "CF11AB",
+            "contact_number": "02956781234",
+            "price_per_night": 25.00,
+            "spaces": 10
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Woof and Whiskers Lodge",
+            "slug": "woof-and-whiskers-lodge",
+            "description": "Woof & Whiskers Lodge offers a cozy retreat for pets in need of a little pampering. Our comfortable accommodations, experienced staff, and personalized attention ensure that your pet feels right at home during their stay with us. From plush bedding to plenty of playtime, we provide everything your pet needs for a relaxing and enjoyable stay. Book your pet's stay with us today!",
+            "address_line_1": "80 Paw Avenue",
+            "address_line_2": "",
+            "city": "Manchester",
+            "county": "Greater Manchester",
+            "postal_code": "M11AB",
+            "contact_number": "01619876543",
+            "price_per_night": 30.00,
+            "spaces": 12
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Tail Wagging Retreat",
+            "slug": "tail-wagging-retreat",
+            "description": "Tail Wagging Retreat offers a peaceful getaway for pets in need of a little R&R. Our serene surroundings, experienced staff, and personalized care ensure that your pet feels relaxed and rejuvenated during their stay with us. From quiet walks to cozy naps, we provide everything your pet needs for a restful and enjoyable stay. Book your pet's stay with us today!",
+            "address_line_1": "90 Whisker Lane",
+            "address_line_2": "",
+            "city": "Birmingham",
+            "county": "West Midlands",
+            "postal_code": "B11AB",
+            "contact_number": "01218765432",
+            "price_per_night": 35.00,
+            "spaces": 8
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Furry Friends Haven",
+            "slug": "furry-friends-haven",
+            "description": "Furry Friends Haven offers a warm and welcoming environment for pets of all shapes and sizes. Our spacious accommodations, experienced staff, and personalized care ensure that your pet feels comfortable and loved during their stay with us. From cozy beds to plenty of playtime, we provide everything your pet needs for a happy and enjoyable stay. Book your pet's stay with us today!",
+            "address_line_1": "100 Bark Street",
+            "address_line_2": "",
+            "city": "London",
+            "county": "Greater London",
+            "postal_code": "SW1A1AB",
+            "contact_number": "02098765432",
+            "price_per_night": 40.00,
+            "spaces": 15
+        }
+    },
+    {
+        "model": "kennel_manager.kennel",
+        "fields": {
+            "name": "Purr-fect Retreat",
+            "slug": "purr-fect-retreat",
+            "description": "Purr-fect Retreat offers a luxurious escape for cats and dogs alike. Our elegant accommodations, attentive staff, and top-notch amenities ensure that your pet feels pampered and cared for during their stay with us. From gourmet meals to spa treatments, we provide everything your pet needs for a truly indulgent experience. Book your pet's stay with us today!",
+            "address_line_1": "110 Meow Lane",
+            "address_line_2": "",
+            "city": "Liverpool",
+            "county": "Merseyside",
+            "postal_code": "L11AB",
+            "contact_number": "01516789012",
+            "price_per_night": 45.00,
+            "spaces": 10
+        }
+    }
+]

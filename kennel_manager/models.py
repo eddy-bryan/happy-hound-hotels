@@ -5,7 +5,7 @@ from datetime import date
 
 class Kennel(models.Model):
     name = models.CharField(max_length=50, unique=True)
-    slug = models.SlugField(max_length=50, unique=True)
+    slug = models.SlugField(max_length=50, unique=True, blank=True)
     description = models.TextField(max_length=400)
     address_line_1 = models.CharField(max_length=50)
     address_line_2 = models.CharField(max_length=50, blank=True)
@@ -15,6 +15,11 @@ class Kennel(models.Model):
     contact_number = models.CharField(max_length=11, unique=True)
     price_per_night = models.DecimalField(max_digits=6, decimal_places=2)
     spaces = models.IntegerField()
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
 
 
 class Booking(models.Model):

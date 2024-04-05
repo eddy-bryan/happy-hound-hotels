@@ -62,7 +62,6 @@
 <!-- End of search bar -->
 
 <div class="container">
-    <h1>Kennels</h1>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -76,7 +75,7 @@
             <tr>
                 <td class="md-d-block d-none"><img src="{{ kennel.image.url }}" alt="{{ kennel.name }}" width="100"></td>
                 <td>
-                    <h2><a href="#">{{ kennel.name }}</a></h2>
+                    <h2><a href="{% url 'kennel_detail' kennel.slug %}">{{ kennel.name }}</a></h2>
                     <p>{{ kennel.description }}</p>
                 </td>
                 <td>
@@ -98,7 +97,7 @@
 <p>{{ kennel.city }}</p>
 <p>{{ kennel.price_per_night }}</p> -->
 
-{% endfor %}
+<!-- {% endfor %} -->
 {% endblock %}
 
 

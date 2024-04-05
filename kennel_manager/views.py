@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import Kennel, Booking
 from .forms import SearchForm
@@ -27,9 +27,11 @@ def home(request):
         form = SearchForm()
     return render(request, 'kennel_manager/index.html', {'form': form})
 
+
 class KennelList(generic.ListView):
     template_name = 'kennel_list.html'
 
 
-
-# class KennelDetail():
+def kennel_detail(request, slug):
+    kennel = get_object_or_404(Kennel, slug=slug)
+    return render(request, 'kennel_manager/kennel_detail.html', {'kennel': kennel})
