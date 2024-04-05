@@ -6,6 +6,10 @@ header {
     background-color: #ece5d5;
 }
 
+main {
+	margin-top: 70px;
+}
+
 footer {
     background-color: #767A57;
     height: 70px;
@@ -138,5 +142,14 @@ footer a:hover {
 	font-size: 16px;
 	font-weight: 400;
 	color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.booking-form .submit-btn:hover {
+	background: #c6cc9b;
+}
+
+.booking-form .submit-btn:active {
+	background: #454736;
 }
 /* End of modified ColorLib content */

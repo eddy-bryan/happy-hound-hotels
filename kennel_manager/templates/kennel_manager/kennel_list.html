@@ -2,11 +2,103 @@
 {% load static %}
 
 {% block content %}
-<h1>Kennels</h1>
+<!-- This search bar is a modified design template from Colorlib (https://colorlib.com) -->
+<div class="position-relative">
+    <div class="container">
+        <div class="row">
+            <div class="booking-form">
+                <form method="get">
+                    <div class="row no-margin">
+                        <div class="col-md-8">
+                            <div class="row no-margin">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="id_check_in_date" class="form-label">Check in<span
+                                                id="check-in-error" class="text-danger d-none"> *Please fill in this
+                                                field.</span></label>
+                                        <div class="input-group d-flex align-items-center">
+                                            {{ form.check_in_date }}
+                                            <div class="input-group-append">
+                                                <span class="input-group-text p-0 border-0 bg-transparent"><i
+                                                        class="bi bi-calendar"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="id_check_out_date" class="form-label">Check out<span
+                                                id="check-out-error" class="text-danger d-none"> *Please fill in this
+                                                field.</span></label>
+                                        <div class="input-group d-flex align-items-center">
+                                            {{ form.check_out_date }}
+                                            <div class="input-group-append">
+                                                <span class="input-group-text p-0 border-0 bg-transparent"><i
+                                                        class="bi bi-calendar"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="id_num_pets" class="form-label">Pets</label>
+                                        {{ form.num_pets }}
+                                        <span class="select-arrow"><i class="bi bi-caret-down"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-btn">
+                                <button class="submit-btn">Check availability</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of search bar -->
+
+<div class="container">
+    <h1>Kennels</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th class="d-none">Image</th>
+                <th class="d-none">Name & Description</th>
+                <th class="d-none">City & Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for kennel in kennels %}
+            <tr>
+                <td class="md-d-block d-none"><img src="{{ kennel.image.url }}" alt="{{ kennel.name }}" width="100"></td>
+                <td>
+                    <h2><a href="#">{{ kennel.name }}</a></h2>
+                    <p>{{ kennel.description }}</p>
+                </td>
+                <td>
+                    <p><strong>City:</strong> {{ kennel.city }}</p>
+                    <p><strong>Price:</strong> £{{ kennel.price_per_night }}</p>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+<!-- <h1>Kennels</h1>
 {% for kennel in kennels %}
 <h2>{{ kennel.name }}</h2>
 <p>{{ kennel.description }}</p>
 <p>{{ kennel.city }}</p>
-<p>{{ kennel.price_per_night }}</p>
+<p>{{ kennel.price_per_night }}</p> -->
+
 {% endfor %}
 {% endblock %}
+
+

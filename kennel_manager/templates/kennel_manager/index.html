@@ -3,7 +3,7 @@
 
 {% block content %}
 <!-- This search bar is a modified design template from Colorlib (https://colorlib.com) -->
-<div id="booking" class="section">
+<div id="booking" class="section position-relative">
     <div class="section-center">
         <div class="container">
             <div class="row">
@@ -14,7 +14,7 @@
                                 <div class="row no-margin">
                                     <div class="col-md-5">
                                         <div class="form-group">
-                                            <label for="id_check_in_date" class="form-label">Check in</label>
+                                            <label for="id_check_in_date" class="form-label">Check in<span id="check-in-error" class="text-danger d-none"> *Please fill in this field.</span></label>
                                             <div class="input-group d-flex align-items-center">
                                                 {{ form.check_in_date }}
                                                 <div class="input-group-append">
@@ -25,7 +25,7 @@
                                     </div>
                                     <div class="col-md-5">
                                         <div class="form-group">
-                                            <label for="id_check_out_date" class="form-label">Check out</label>
+                                            <label for="id_check_out_date" class="form-label">Check out<span id="check-out-error" class="text-danger d-none"> *Please fill in this field.</span></label>
                                             <div class="input-group d-flex align-items-center">
                                                 {{ form.check_out_date }}
                                                 <div class="input-group-append">
@@ -55,4 +55,5 @@
         </div>
     </div>
 </div>
+<!-- End of search bar -->
 {% endblock %}
