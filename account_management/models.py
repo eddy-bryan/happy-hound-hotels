@@ -1,9 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 class UserProfile(models.Model):
     username = models.OneToOneField(User, on_delete=models.CASCADE)
-    # profile_picture = CloudinaryField('profile_pictures', null=True, blank=True)
+    profile_picture = CloudinaryField('image', default='placeholder')
     address_line_1 = models.CharField(max_length=50)
     address_line_2 = models.CharField(max_length=50, blank=True)
     city = models.CharField(max_length=50)
@@ -16,7 +17,7 @@ class PetProfile(models.Model):
     pet_name = models.CharField(max_length=50)
     breed = models.CharField(max_length=50)
     date_of_birth = models.DateField()
-    # vaccination_certificate = CloudinaryField('vaccination_details', null=True, blank=True)
+    # vaccination_certificate = CloudinaryField('file', default='placeholder')
     vet_name = models.CharField(max_length=50)
     vet_address_line_1 = models.CharField(max_length=50)
     vet_address_line_2 = models.CharField(max_length=50, blank=True)
