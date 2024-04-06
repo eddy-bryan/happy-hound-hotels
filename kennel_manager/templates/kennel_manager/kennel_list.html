@@ -72,17 +72,53 @@
         </thead>
         <tbody>
             {% for kennel in kennels %}
-            <tr>
-                <td class="md-d-block d-none"><img src="{{ kennel.image.url }}" alt="{{ kennel.name }}" width="100"></td>
-                <td>
-                    <h2><a href="{% url 'kennel_detail' kennel.slug %}">{{ kennel.name }}</a></h2>
-                    <p>{{ kennel.description }}</p>
-                </td>
-                <td>
-                    <p><strong>City:</strong> {{ kennel.city }}</p>
-                    <p><strong>Price:</strong> £{{ kennel.price_per_night }}</p>
-                </td>
-            </tr>
+            <div class="container">
+                <div class="row">
+                    <div class="col-3 d-none d-md-flex">
+                        {% if "placeholder" in kennel.kennel_image.url %}
+                        <img src="{% static 'images/default-kennel.png' %}" alt="placeholder image" class="img-fluid">
+                        {% else %}
+                        <img src="{{ kennel.kennel_image.url }}" alt="{{ kennel.name }}" class="img-fluid">
+                        {% endif %}
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-9">
+                                <h2><a href="{% url 'kennel_detail' kennel.slug %}">{{ kennel.name }}</a></h2>
+                                <p>{{ kennel.description }}</p>
+                            </div>
+                            <div class="col-3">
+                                <p><strong>City:</strong> {{ kennel.city }}</p>
+                                <p><strong>Price:</strong> £{{ kennel.price_per_night }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- <tr>
+                <div class="d-none d-md-block col-md-3">
+                    <td>
+                        {% if "placeholder" in kennel.kennel_image.url %}
+                        <img src="{% static 'images/default-kennel.png' %}" alt="placeholder image" class="image-fluid">
+                        {% else %}
+                        <img src="{{ kennel.kennel_image.url }}" alt="{{ kennel.name }}" class="image-fluid">
+                        {% endif %}
+                    </td>
+                </div>
+                <div class="col-md-9">
+                    <td class="col-9">
+                        <h2><a href="{% url 'kennel_detail' kennel.slug %}">{{ kennel.name }}</a></h2>
+                        <p>{{ kennel.description }}</p>
+                    </td>
+                    <td class="col-3">
+                        <p><strong>City:</strong> {{ kennel.city }}</p>
+                        <p><strong>Price:</strong> £{{ kennel.price_per_night }}</p>
+                    </td>
+                </div>
+            </tr> -->
             {% endfor %}
         </tbody>
     </table>

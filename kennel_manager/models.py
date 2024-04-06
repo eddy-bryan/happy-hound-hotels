@@ -2,10 +2,12 @@ from django.db import models
 from django.contrib.auth.models import User
 from account_management.models import PetProfile
 from datetime import date
+from cloudinary.models import CloudinaryField
 
 class Kennel(models.Model):
     name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=50, unique=True, blank=True)
+    kennel_image = CloudinaryField('image', default='placeholder')
     description = models.TextField(max_length=400)
     address_line_1 = models.CharField(max_length=50)
     address_line_2 = models.CharField(max_length=50, blank=True)
