@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+
 <!-- This search bar is a modified design template from Colorlib (https://colorlib.com) -->
 <div class="position-relative">
     <div class="container">
@@ -95,45 +96,11 @@
                     </div>
                 </div>
             </div>
-
-
-
-            <!-- <tr>
-                <div class="d-none d-md-block col-md-3">
-                    <td>
-                        {% if "placeholder" in kennel.kennel_image.url %}
-                        <img src="{% static 'images/default-kennel.png' %}" alt="placeholder image" class="image-fluid">
-                        {% else %}
-                        <img src="{{ kennel.kennel_image.url }}" alt="{{ kennel.name }}" class="image-fluid">
-                        {% endif %}
-                    </td>
-                </div>
-                <div class="col-md-9">
-                    <td class="col-9">
-                        <h2><a href="{% url 'kennel_detail' kennel.slug %}">{{ kennel.name }}</a></h2>
-                        <p>{{ kennel.description }}</p>
-                    </td>
-                    <td class="col-3">
-                        <p><strong>City:</strong> {{ kennel.city }}</p>
-                        <p><strong>Price:</strong> £{{ kennel.price_per_night }}</p>
-                    </td>
-                </div>
-            </tr> -->
             {% endfor %}
         </tbody>
     </table>
 </div>
 
-
-
-<!-- <h1>Kennels</h1>
-{% for kennel in kennels %}
-<h2>{{ kennel.name }}</h2>
-<p>{{ kennel.description }}</p>
-<p>{{ kennel.city }}</p>
-<p>{{ kennel.price_per_night }}</p> -->
-
-<!-- {% endfor %} -->
 {% endblock %}
 
 

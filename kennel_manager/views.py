@@ -35,3 +35,8 @@ class KennelList(generic.ListView):
 def kennel_detail(request, slug):
     kennel = get_object_or_404(Kennel, slug=slug)
     return render(request, 'kennel_manager/kennel_detail.html', {'kennel': kennel})
+
+
+def book_now(request, kennel_id):
+    kennel = get_object_or_404(Kennel, pk=kennel_id)
+    return render(request, 'kennel_manager/booking_form.html', {'kennel': kennel})
