@@ -28,6 +28,7 @@
                 <img src="#" alt="Breed Image">
                 <!-- Display pet's name -->
                 <p>{{ pet.pet_name }}</p>
+                <a href="{% url 'pet_profile' pet.owner pet.pet_name %}">{{ pet.pet_name }}</a>
             </li>
             {% endfor %}
             <!-- Add Pet button -->
