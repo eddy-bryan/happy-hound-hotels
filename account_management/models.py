@@ -15,6 +15,7 @@ class UserProfile(models.Model):
 class PetProfile(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     pet_name = models.CharField(max_length=50)
+    pet_picture = CloudinaryField('image', default='placeholder')
     breed = models.CharField(max_length=50)
     date_of_birth = models.DateField()
     # vaccination_certificate = CloudinaryField('file', default='placeholder')

@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from .models import Kennel, Booking
-from .forms import SearchForm
+from .forms import SearchForm, BookingForm
 
 def home(request):
     if request.method == 'GET':
@@ -39,4 +39,36 @@ def kennel_detail(request, slug):
 
 def book_now(request, kennel_id):
     kennel = get_object_or_404(Kennel, pk=kennel_id)
-    return render(request, 'kennel_manager/booking_form.html', {'kennel': kennel})
+    if request.method == 'POST':
+        print(request.POST)
+        form = BookingForm(user=request.user, data=request.POST)
+        if form.is_valid():
+            check_in_date = form.cleaned_data['check_in_date']
+            check_out_date = form.cleaned_data['check_out_date']
+            selected_pets = form.cleaned_data.get('pet_name')
+
+            # Initialise a list to store booking data
+            bookings_data = []
+
+            # Create booking data for each selected pet
+            for pet in selected_pets:
+                booking_data = {
+                    'customer': request.user,
+                    'kennel': kennel,
+                    'check_in_date': check_in_date,
+                    'check_out_date': check_out_date,
+                    'pet_name': pet
+                }
+                bookings_data.append(booking_data)
+
+            # Create Booking instances from the collected data
+            for booking_data in bookings_data:
+                Booking.objects.create(**booking_data)
+
+            Booking.objects.save()
+
+            # Redirect to booking success page after creating all bookings
+            return redirect('booking_success')
+    else:
+        form = BookingForm(user=request.user)
+    return render(request, 'kennel_manager/booking_form.html', {'form': form, 'kennel': kennel})

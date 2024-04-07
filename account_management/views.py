@@ -9,8 +9,16 @@ def user_profile(request):
     return render(request, 'account_management/user_profile.html', context)
 
 
+# def pet_profile(request, owner, pet_name):
+#     pet_name = PetProfile.objects.get(pet_name=pet_name)
+#     owner = UserProfile.objects.get(username=request.user)
+#     context = {'pet_name': pet_name, 'owner': owner}
+#     return render(request, 'account_management/pet_profile.html', context)
+
+
 def pet_profile(request, owner, pet_name):
-    pet_name = PetProfile.objects.get(pet_name=pet_name)
-    owner = UserProfile.objects.get(username=request.user)
-    context = {'pet_name': pet_name, 'owner': owner}
+    pet_profile = PetProfile.objects.get(owner__username=owner, pet_name=pet_name)
+    owner_profile = UserProfile.objects.get(username__username=owner)
+    context = {'pet_profile': pet_profile, 'owner_profile': owner_profile}
     return render(request, 'account_management/pet_profile.html', context)
+

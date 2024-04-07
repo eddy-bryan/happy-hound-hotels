@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ pet_profile.pet_name }}</h1>
+    <div class="profile-info">
+        <div class="profile-image">
+            {% if "placeholder" in pet_profile.pet_picture.url %}
+            <img src="{% static 'images/default-pet.png' %}" alt="placeholder image" class="img-fluid">
+            {% else %}
+            <img src="{{ pet_profile.pet_picture.url }}" alt="{{ pet_profile.pet_name }}" class="img-fluid">
+            {% endif %}
+        </div>
+        <div class="profile-details">
+            <p><strong>Breed:</strong> {{ pet_profile.breed }}</p>
+            <p><strong>Age:</strong> {{ pet_profile.date_of_birth }}</p>
+            <p><strong>Vet Address:</strong> {{ pet_profile.vet_name }}<br>
+                {% if pet_profile.vet_address_line_2 %}
+                    {{ pet_profile.vet_address_line_1 }},</br>
+                    {{ pet_profile.vet_address_line_2 }},</br>
+                {% else %}
+                    {{ pet_profile.vet_address_line_1 }},</br>
+                {% endif %}
+                {{ pet_profile.city }}<br>
+                {{ pet_profile.county }}<br>
+                {{ pet_profile.postal_code }}</p>
+            <p><strong>Vet Contact Number:</strong> {{ pet_profile.contact_number }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
