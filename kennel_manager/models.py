@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from account_management.models import PetProfile
 from datetime import date
 from cloudinary.models import CloudinaryField
 
@@ -26,24 +25,20 @@ class Kennel(models.Model):
 
 class Booking(models.Model):
     customer = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    pet_name = models.ManyToManyField(PetProfile)
+    num_pets = models.IntegerField()
     kennel = models.ForeignKey(Kennel, on_delete=models.CASCADE)
     check_in_date = models.DateField()
     check_out_date = models.DateField()
 
 
     def is_space_available(self):
-        """
-        Check if space is available for booking in the kennel between the specified dates.
-        """
-        # Calculate available spaces for the kennel between check-in and check-out dates
-        bookings_within_dates = Booking.objects.filter(
+        booked_spaces = Booking.objects.filter(
             kennel=self.kennel,
             check_in_date__lte=self.check_out_date,
             check_out_date__gte=self.check_in_date
-        )
-        booked_spaces = sum(booking.pet_name.count() for booking in bookings_within_dates)
-        return self.kennel.spaces - booked_spaces >= self.pet_name.count()
+        ).count()
+
+        return self.kennel.spaces - booked_spaces >= int(self.num_pets)
 
 
     def is_valid_dates(self):

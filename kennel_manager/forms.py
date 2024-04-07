@@ -1,6 +1,5 @@
 from django import forms
 from .models import Booking
-from account_management.models import PetProfile
 
 class NumberInputWithPlaceholder(forms.NumberInput):
     input_type = 'number'
@@ -30,15 +29,22 @@ class SearchForm(forms.Form):
 
 
 class BookingForm(forms.ModelForm):
-    class Meta:
-        model = Booking
-        fields = ['check_in_date', 'check_out_date', 'pet_name']
-        widgets = {
-            'check_in_date': forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'MM/DD/YYYY'}),
-            'check_out_date': forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'MM/DD/YYYY'}),
-            'pet_name': forms.SelectMultiple(attrs={'class': 'form-control'}),
-        }
+    NUM_PETS_CHOICES = [(i, str(i)) for i in range(1, 11)]
 
-    def __init__(self, user, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['pet_name'].queryset = PetProfile.objects.filter(owner=user)
+    check_in_date = forms.DateField(
+        label='Check-in Date',
+        widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'MM/DD/YYYY'})
+    )
+    check_out_date = forms.DateField(
+        label='Check-out Date',
+        widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'MM/DD/YYYY'})
+    )
+    num_pets = forms.ChoiceField(
+        choices=NUM_PETS_CHOICES,
+        label='Number of Pets',
+        widget=forms.Select(attrs={'class': 'form-control'})
+    )
+
+    class Meta:
+        model = Booking  # Specify the model for the form
+        fields = ['check_in_date', 'check_out_date', 'num_pets']

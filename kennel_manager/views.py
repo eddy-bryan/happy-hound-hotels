@@ -18,7 +18,7 @@ def home(request):
                     check_in_date__lte=check_out_date,
                     check_out_date__gte=check_in_date
                 )
-                booked_spaces = sum(booking.pet_name.count() for booking in booking_within_dates)
+                booked_spaces = sum(num_pets for booking in booking_within_dates)
                 if kennel.spaces - booked_spaces >= num_pets:
                     available_kennels.append(kennel)
             # Render the kennel_list.html template with filtered queryset
@@ -39,36 +39,29 @@ def kennel_detail(request, slug):
 
 def book_now(request, kennel_id):
     kennel = get_object_or_404(Kennel, pk=kennel_id)
+    
     if request.method == 'POST':
-        print(request.POST)
-        form = BookingForm(user=request.user, data=request.POST)
+        form = BookingForm(data=request.POST)
         if form.is_valid():
             check_in_date = form.cleaned_data['check_in_date']
             check_out_date = form.cleaned_data['check_out_date']
-            selected_pets = form.cleaned_data.get('pet_name')
+            num_pets = form.cleaned_data['num_pets']
 
-            # Initialise a list to store booking data
-            bookings_data = []
-
-            # Create booking data for each selected pet
-            for pet in selected_pets:
-                booking_data = {
-                    'customer': request.user,
-                    'kennel': kennel,
-                    'check_in_date': check_in_date,
-                    'check_out_date': check_out_date,
-                    'pet_name': pet
-                }
-                bookings_data.append(booking_data)
-
-            # Create Booking instances from the collected data
-            for booking_data in bookings_data:
-                Booking.objects.create(**booking_data)
-
-            Booking.objects.save()
-
-            # Redirect to booking success page after creating all bookings
+            booking = Booking.objects.create(
+                customer=request.user,
+                kennel=kennel,
+                check_in_date=check_in_date,
+                check_out_date=check_out_date,
+                num_pets=num_pets
+            )
+                
+            # Redirect to booking success page after creating the booking
             return redirect('booking_success')
     else:
-        form = BookingForm(user=request.user)
+        form = BookingForm()
+    
     return render(request, 'kennel_manager/booking_form.html', {'form': form, 'kennel': kennel})
+
+
+def booking_success(request):
+    return render(request, 'kennel_manager/booking_success.html')
