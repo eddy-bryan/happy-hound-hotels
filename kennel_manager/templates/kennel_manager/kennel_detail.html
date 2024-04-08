@@ -22,10 +22,10 @@
             <h2>Address</h2>
             <p>
                 {% if kennel.address_line_2 %}
-                    {{ kennel.address_line_1 }},</br>
-                    {{ kennel.address_line_2 }},</br>
+                {{ kennel.address_line_1 }},</br>
+                {{ kennel.address_line_2 }},</br>
                 {% else %}
-                    {{ kennel.address_line_1 }},</br>
+                {{ kennel.address_line_1 }},</br>
                 {% endif %}
                 {{ kennel.city }},</br>
                 {{ kennel.county }},</br>
@@ -44,5 +44,34 @@
             <a href="{% url 'book_now' kennel_id=kennel.id %}" class="btn btn-primary">Book Now</a>
         </div>
     </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <strong class="text-secondary">
+            <i class="far fa-comments"></i> {{ review_count }} reviews
+        </strong>
+    </div>
+    <div class="col-12">
+        <hr>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8 card mb-4  mt-3">
+        <h3>Reviews:</h3>
+        <div class="card-body">
+            {% for review in reviews %}
+                <div class="p-2">
+                    <p class="font-weight-bold">
+                        {{ review.author }}
+                        <span class="font-weight-normal">
+                            {{ review.created_on }}
+                        </span> wrote:
+                    </p>
+                    <p>{{ review.body | linebreaks }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
     
 {% endblock %}

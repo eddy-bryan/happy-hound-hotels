@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator
 from datetime import date
 from cloudinary.models import CloudinaryField
 
@@ -17,6 +18,11 @@ class Kennel(models.Model):
     price_per_night = models.DecimalField(max_digits=6, decimal_places=2)
     spaces = models.IntegerField()
 
+
+    def __str__(self):
+        return f"{self.name} with {self.spaces} spaces based in {self.city} for £{self.price_per_night} per night"
+
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
@@ -29,6 +35,10 @@ class Booking(models.Model):
     kennel = models.ForeignKey(Kennel, on_delete=models.CASCADE)
     check_in_date = models.DateField()
     check_out_date = models.DateField()
+
+
+    def __str__(self):
+        return f"Booking for {self.customer} for {self.num_pets} from {self.check_in_date} until {self.check_out_date}"
 
 
     def is_space_available(self):
@@ -60,3 +70,30 @@ class Booking(models.Model):
                 raise ValueError("Booking dates must be valid and not in the past")
             elif not self.is_space_available():
                 raise ValueError("No space available for booking within the specified dates")
+
+
+class Review(models.Model):
+    kennel = models.ForeignKey(
+        Kennel,
+        on_delete=models.CASCADE,
+        related_name="reviews"
+    )
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="reviews_author"
+    )
+    rating = models.IntegerField(
+        validators=[
+            MaxValueValidator(5),
+            MinValueValidator(1)
+        ]
+    )
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["created_on"]
+    
+    def __str__(self):
+        return f"{self.rating} star review for {self.kennel} by {self.author}"

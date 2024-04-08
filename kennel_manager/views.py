@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
-from .models import Kennel, Booking
+from .models import Kennel, Booking, Review
 from .forms import SearchForm, BookingForm
 
 def home(request):
@@ -35,7 +35,18 @@ class KennelList(generic.ListView):
 
 def kennel_detail(request, slug):
     kennel = get_object_or_404(Kennel, slug=slug)
-    return render(request, 'kennel_manager/kennel_detail.html', {'kennel': kennel})
+    reviews = kennel.reviews.all().order_by("-created_on")
+    review_count = kennel.reviews.all().count()
+
+    return render(
+        request,
+        'kennel_manager/kennel_detail.html',
+        {
+            'kennel': kennel,
+            'reviews': reviews,
+            'review_count': review_count,
+        },
+    )
 
 
 @login_required
