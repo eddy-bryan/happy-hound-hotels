@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from .models import Kennel, Booking
@@ -37,6 +38,7 @@ def kennel_detail(request, slug):
     return render(request, 'kennel_manager/kennel_detail.html', {'kennel': kennel})
 
 
+@login_required
 def book_now(request, kennel_id):
     kennel = get_object_or_404(Kennel, pk=kennel_id)
     
