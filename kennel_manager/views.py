@@ -2,6 +2,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from django.contrib import messages
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 from .models import Kennel, Booking, Review
 from .forms import SearchForm, BookingForm, ReviewForm
 
@@ -63,6 +65,25 @@ def kennel_detail(request, slug):
             'review_form': review_form,
         },
     )
+
+
+def review_edit(request, slug, review_id):
+    if request.method == "POST":
+
+        queryset = Kennel.objects.all()
+        kennel = get_object_or_404(queryset, slug=slug)
+        review = get_object_or_404(Review, pk=review_id)
+        review_form = ReviewForm(data=request.POST, instance=review)
+
+        if review_form.is_valid() and review.author == request.user:
+            review = review_form.save(commit=False)
+            review.kennel = kennel
+            review.save()
+            messages.add_message(request, messages.SUCCESS, 'Review updated successfully.')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating review.')
+
+    return HttpResponseRedirect(reverse('kennel_detail', args=[slug]))
 
 
 @login_required

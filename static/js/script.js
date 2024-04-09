@@ -1,3 +1,6 @@
+/**
+ * Code to display current year for copyright tag within footer
+ */
 // Get the current year
 var currentYear = new Date().getFullYear();
 
