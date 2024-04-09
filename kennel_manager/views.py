@@ -1,8 +1,7 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
-from django.urls import reverse
 from django.http import HttpResponseRedirect
 from .models import Kennel, Booking, Review
 from .forms import SearchForm, BookingForm, ReviewForm
@@ -82,6 +81,20 @@ def review_edit(request, slug, review_id):
             messages.add_message(request, messages.SUCCESS, 'Review updated successfully.')
         else:
             messages.add_message(request, messages.ERROR, 'Error updating review.')
+
+    return HttpResponseRedirect(reverse('kennel_detail', args=[slug]))
+
+
+def review_delete(request, slug, review_id):
+    queryset = Kennel.objects.all()
+    kennel = get_object_or_404(queryset, slug=slug)
+    review = get_object_or_404(Review, pk=review_id)
+
+    if review.author == request.user:
+        review.delete()
+        messages.add_message(request, messages.SUCCESS, 'Review deleted successfully.')
+    else:
+        messages.add_message(request, messages.ERROR, 'Error deleting review.')
 
     return HttpResponseRedirect(reverse('kennel_detail', args=[slug]))
 
