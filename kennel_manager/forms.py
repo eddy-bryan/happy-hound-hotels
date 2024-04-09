@@ -1,14 +1,5 @@
 from django import forms
-from .models import Booking
-
-class NumberInputWithPlaceholder(forms.NumberInput):
-    input_type = 'number'
-
-    def __init__(self, attrs=None, placeholder=None):
-        super().__init__(attrs)
-        if placeholder:
-            self.attrs['placeholder'] = placeholder
-
+from .models import Booking, Review
 
 class SearchForm(forms.Form):
     NUM_PETS_CHOICES = [(i, str(i)) for i in range(1, 11)]
@@ -48,3 +39,12 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking  # Specify the model for the form
         fields = ['check_in_date', 'check_out_date', 'num_pets']
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = (
+            'body',
+            'rating',
+            )

@@ -1,8 +1,9 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
+from django.contrib import messages
 from .models import Kennel, Booking, Review
-from .forms import SearchForm, BookingForm
+from .forms import SearchForm, BookingForm, ReviewForm
 
 def home(request):
     if request.method == 'GET':
@@ -38,6 +39,20 @@ def kennel_detail(request, slug):
     reviews = kennel.reviews.all().order_by("-created_on")
     review_count = kennel.reviews.all().count()
 
+    if request.method == 'POST':
+        review_form = ReviewForm(data=request.POST)
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.author = request.user
+            review.kennel = kennel
+            review.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Review submitted successfully!'
+            )
+
+    review_form = ReviewForm()
+
     return render(
         request,
         'kennel_manager/kennel_detail.html',
@@ -45,6 +60,7 @@ def kennel_detail(request, slug):
             'kennel': kennel,
             'reviews': reviews,
             'review_count': review_count,
+            'review_form': review_form,
         },
     )
 
