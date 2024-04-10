@@ -28,6 +28,11 @@ footer a:hover {
     color: #9b9b9b;
 }
 
+.kennel_list_image {
+	height: fit-content;
+	width: auto;
+}
+
 
 /* Adaptation of search bar styling for modified ColorLib template */
 .section {
@@ -53,8 +58,8 @@ footer a:hover {
 }
 
 .booking-form {
-	background: rgba(61, 48, 40, 0.5);
-	border-radius: 10px;
+	background: #ffffff;
+	border: 2px solid #000000;
 }
 
 .booking-form>form .row.no-margin {
@@ -83,21 +88,21 @@ footer a:hover {
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	font-size: 20px;
-	color: #c5c5c5;
+	color: #000000;
 	font-weight: 400;
 	padding: 0;
 }
 
 .booking-form .form-control::-webkit-input-placeholder {
-	color: #c5c5c5;
+	color: #5e5e5e;
 }
 
 .booking-form .form-control:-ms-input-placeholder {
-	color: #c5c5c5;
+	color: #5e5e5e;
 }
 
 .booking-form .form-control::placeholder {
-	color: #c5c5c5;
+	color: #5e5e5e;
 }
 
 .booking-form select.form-control {
@@ -115,12 +120,12 @@ footer a:hover {
 	height: 32px;
 	text-align: center;
 	pointer-events: none;
-	color: #c5c5c5;
+	color: #000000;
 	font-size: 14px;
 }
 
 .booking-form .form-label {
-	color: #ffffff;
+	color: #000000;
 	display: block;
 	font-weight: 400;
 	height: 25px;
@@ -133,7 +138,7 @@ footer a:hover {
 }
 
 .booking-form .submit-btn {
-	background: #767A57;
+	background: #FF9F1C;
 	border: none;
 	text-transform: capitalize;
 	display: block;
@@ -147,7 +152,7 @@ footer a:hover {
 }
 
 .booking-form .submit-btn:hover {
-	background: #c6cc9b;
+	background: #d88818;
 }
 
 .booking-form .submit-btn:active {

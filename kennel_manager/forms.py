@@ -1,8 +1,12 @@
 from django import forms
 from .models import Booking, Review
+from datetime import datetime, timedelta
 
 class SearchForm(forms.Form):
     NUM_PETS_CHOICES = [(i, str(i)) for i in range(1, 11)]
+    today = datetime.now().date()
+    tomorrow = today + timedelta(days=1)
+    after_tomorrow = tomorrow + timedelta(days=1)
 
     check_in_date = forms.DateField(
         label='Check-in Date',

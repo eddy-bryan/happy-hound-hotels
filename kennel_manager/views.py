@@ -13,6 +13,7 @@ def home(request):
             check_in_date = form.cleaned_data['check_in_date']
             check_out_date = form.cleaned_data['check_out_date']
             num_pets = int(form.cleaned_data['num_pets'])
+
             # Filter the queryset based on search criteria
             available_kennels = []
             for kennel in Kennel.objects.all():
@@ -24,15 +25,12 @@ def home(request):
                 booked_spaces = sum(num_pets for booking in booking_within_dates)
                 if kennel.spaces - booked_spaces >= num_pets:
                     available_kennels.append(kennel)
+
             # Render the kennel_list.html template with filtered queryset
             return render(request, 'kennel_manager/kennel_list.html', {'kennels': available_kennels, 'form': form})
     else:
         form = SearchForm()
     return render(request, 'kennel_manager/index.html', {'form': form})
-
-
-class KennelList(generic.ListView):
-    template_name = 'kennel_list.html'
 
 
 def kennel_detail(request, slug):
