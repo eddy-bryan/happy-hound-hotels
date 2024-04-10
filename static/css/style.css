@@ -1,36 +1,39 @@
-.navbar {
-    height: 70px;
-}
-
-header {
-    background-color: #ece5d5;
-}
-
-main {
-	margin-top: 70px;
-}
-
 footer {
-    background-color: #767A57;
-    height: 70px;
+    background-color: #E1E0E1;
+}
+
+#footer-container {
+	padding: 10px;
 }
 
 #github-link {
     text-decoration: none;
 }
 
-footer a {
-    color: white;
+footer p {
+	margin-bottom: 0;
+}
+
+footer a, footer p {
+    color: #616161;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #9b9b9b;
+    color: #000000;
 }
 
 .kennel_list_image {
 	height: fit-content;
 	width: auto;
+}
+
+#slogan {
+	position: absolute;
+	color: #aaaaaa;
+	font-style: italic;
+	margin-top: 10%;
+	margin-left: 25%;
 }
 
 
