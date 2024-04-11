@@ -4,8 +4,8 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
+<div class="container clear-header">
+    <div class="row justify-content-center">
         <div class="col-12 col-md-6">
             {% if "placeholder" in kennel.kennel_image.url %}
             <img src="{% static 'images/default-kennel.png' %}" alt="placeholder image" class="img-fluid">
@@ -49,7 +49,7 @@
 <div class="row">
     <div class="col-12">
         <strong class="text-secondary">
-            <i class="far fa-comments"></i> {{ review_count }} reviews
+            <i class="bi bi-chat-square-fill"></i> {{ review_count }} reviews
         </strong>
     </div>
     <div class="col-12">
@@ -68,7 +68,7 @@
             class="btn btn-signup btn-lg">Submit</button>
         </form>
         {% else %}
-        <p>Log in to leave a review</p>
+        <p><a href="{% url 'account_login' %}" class="text-decoration-none">Log in</a> to leave a review</p>
         {% endif %}
     </div>
 </div>

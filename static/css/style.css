@@ -1,3 +1,61 @@
+header {
+	height: 71px;
+}
+
+.shadow {
+	box-shadow: 0px 2px 15px #616161;
+}
+
+#nav-logo {
+	height: 30px;
+	vertical-align: -2px;
+}
+
+.navbar-brand {
+	font-weight: bold;
+	color: #616161;
+	font-size: 30px;
+}
+
+/* Overrider hover set by bootrap class */
+.navbar-brand:hover {
+	color: #616161;
+}
+
+.allauth-card {
+	max-width: 400px;
+	box-shadow: 0px 2px 15px #616161;
+}
+
+.allauth-card p {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.login input {
+	width: 100%;
+}
+
+#id_remember {
+	width: fit-content;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.clear-header {
+	margin-top: 71px;
+}
+
+.clear-header-search {
+	margin-top: 204px;
+}
+
+@media (max-width: 768px) {
+    .clear-header-search {
+		margin-top: 595px;
+	}
+}
+
 footer {
     background-color: #E1E0E1;
 }
@@ -23,6 +81,11 @@ footer a:hover {
     color: #000000;
 }
 
+.kennel-list-item {
+	background-color: #E1E0E1;
+	border-radius: var(--bs-border-radius);
+}
+
 .kennel_list_image {
 	height: fit-content;
 	width: auto;
@@ -32,8 +95,34 @@ footer a:hover {
 	position: absolute;
 	color: #aaaaaa;
 	font-style: italic;
-	margin-top: 10%;
+	margin-top: 75px;
 	margin-left: 25%;
+}
+
+.nav-link {
+	border-radius: 15px;
+}
+
+.nav-link:hover {
+	background-color: #E1E0E1;
+}
+
+.button {
+	background: #FF9F1C;
+	border: none;
+	text-transform: capitalize;
+	display: block;
+	border-radius: 10px;
+	color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+	background: #d88818;
+}
+
+.button:active {
+	background: #454736;
 }
 
 
@@ -61,8 +150,7 @@ footer a:hover {
 }
 
 .booking-form {
-	background: #ffffff;
-	border: 2px solid #000000;
+	border-radius: var(--bs-border-radius);
 }
 
 .booking-form>form .row.no-margin {
@@ -141,24 +229,9 @@ footer a:hover {
 }
 
 .booking-form .submit-btn {
-	background: #FF9F1C;
-	border: none;
-	text-transform: capitalize;
-	display: block;
-	border-radius: 10px;
 	width: 100%;
 	height: 75px;
 	font-size: 16px;
 	font-weight: 400;
-	color: #ffffff;
-    transition: background-color 0.3s ease;
-}
-
-.booking-form .submit-btn:hover {
-	background: #d88818;
-}
-
-.booking-form .submit-btn:active {
-	background: #454736;
 }
 /* End of modified ColorLib content */

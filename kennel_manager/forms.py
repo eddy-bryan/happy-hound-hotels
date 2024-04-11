@@ -50,5 +50,4 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = (
             'body',
-            'rating',
             )

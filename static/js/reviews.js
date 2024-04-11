@@ -1,6 +1,5 @@
 const editButtons = document.getElementsByClassName('btn-edit');
 const reviewText = document.getElementById("id_body");
-const reviewRating = document.getElementById("id_rating");
 const reviewForm = document.getElementById("reviewForm");
 const submitButton = document.getElementById("submitButton");
 
@@ -21,7 +20,6 @@ for (let button of editButtons) {
 
         let reviewContent = document.getElementById(`review${reviewId}`).innerText;
         reviewText.value = reviewContent;
-        reviewRating.value = reviewContent;
         submitButton.innerText = "Update";
         reviewForm.setAttribute("action", `edit_review/${reviewId}`);
     });
