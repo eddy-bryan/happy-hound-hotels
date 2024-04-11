@@ -27,7 +27,7 @@ header {
 	box-shadow: 0px 2px 15px #616161;
 }
 
-.allauth-card p {
+.allauth-card p, .allauth-card li {
 	margin-left: 10%;
 	margin-right: 10%;
 }
@@ -40,6 +40,30 @@ header {
 	width: fit-content;
 	margin-left: 0;
 	margin-right: 0;
+}
+
+#sign-up-dog {
+    background-color: #ffffff;
+	background-image: url('../images/sign-up-dog.jpg');
+	background-size: contain;
+	background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+#log-in-dog {
+    background-color: #ffffff;
+	background-image: url('../images/log-in-dog.jpg');
+	background-size: contain;
+	background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+#log-out-dog {
+    background-color: #ffffff;
+	background-image: url('../images/log-out-dog.jpg');
+	background-size: contain;
+	background-position: bottom right;
+    background-repeat: no-repeat;
 }
 
 .clear-header {

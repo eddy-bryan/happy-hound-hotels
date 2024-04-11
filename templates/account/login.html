@@ -6,11 +6,11 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-<div class="container vh-100 d-flex align-items-center justify-content-center">
+<div class="container vh-100 d-flex align-items-center justify-content-center" id="log-in-dog">
   <div class="card d-flex allauth-card border-0 bg-light">
     <h1 class="align-self-center pt-3">{% trans "Sign In" %}</h1>
     <p>
-      {% blocktrans %}Please sign in to make a booking of leave a review. Or <a href="{{ signup_url }}">sign up</a>
+      {% blocktrans %}Please sign in to make a booking or leave a review. Or <a href="{{ signup_url }}">sign up</a>
       if you haven't created an account yet!{% endblocktrans %}
     </p>
 
