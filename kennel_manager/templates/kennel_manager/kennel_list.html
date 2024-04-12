@@ -68,7 +68,7 @@
 
 <div class="container mt-10 clear-nav-search-md">
     {% for kennel in kennels %}
-    <div class="container d-md-flex d-none m-2 kennel-list-item bg-light">
+    <div class="container ms-auto d-md-block d-none m-3 kennel-list-item bg-light">
         <div class="row">
             <div class="col-lg-3 col-6">
                 <div class="row">
@@ -102,27 +102,23 @@
         </div>
     </div>
 
-    <div class="container d-md-none p-2 kennel-list-item bg-light">
+    <div class="container d-md-none d-block ms-auto m-3 kennel-list-item bg-light">
+        <div class="row d-md-flex">
+            {% if "placeholder" in kennel.kennel_image.url %}
+            <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{% static 'images/default-kennel.png' %}"
+                    alt="placeholder image" class="kennel_list_image img-fluid"></a>
+            {% else %}
+            <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{{ kennel.kennel_image.url }}"
+                    alt="{{ kennel.name }}" class="img-fluid"></a>
+            {% endif %}
+        </div>
         <div class="row">
-            <div class="row d-md-flex">
-                {% if "placeholder" in kennel.kennel_image.url %}
-                <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{% static 'images/default-kennel.png' %}" alt="placeholder image" class="kennel_list_image img-fluid"></a>
-                {% else %}
-                <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{{ kennel.kennel_image.url }}" alt="{{ kennel.name }}" class="img-fluid"></a>
-                {% endif %}
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col-9">
-                        <h2><a href="{% url 'kennel_detail' kennel.slug %}">{{ kennel.name }}</a></h2>
-                        <p>{{ kennel.description }}</p>
-                    </div>
-                    <div class="col-3">
-                        <p><strong>City:</strong> {{ kennel.city }}</p>
-                        <p><strong>Price:</strong> £{{ kennel.price_per_night }}</p>
-                    </div>
-                </div>
-            </div>
+            <h2><a href="{% url 'kennel_detail' kennel.slug %}">{{ kennel.name }}</a></h2>
+            <p>{{ kennel.description }}</p>
+        </div>
+        <div class="row">
+            <p><strong>City:</strong> {{ kennel.city }}</p>
+            <p><strong>Price:</strong> £{{ kennel.price_per_night }}</p>
         </div>
     </div>
     {% endfor %}

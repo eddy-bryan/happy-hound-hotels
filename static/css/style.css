@@ -71,7 +71,7 @@ header {
 }
 
 .clear-nav-search-md {
-	margin-top: 204px;
+	margin-top: 225px;
 }
 
 @media (max-width: 768px) {
@@ -79,7 +79,7 @@ header {
         margin-top: 71px;
     }
 	.clear-nav-search-md {
-		margin-top: 71px !important;
+		margin-top: 90px !important;
 	}
 }
 
