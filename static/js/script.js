@@ -11,9 +11,10 @@ document.getElementById("currentYear").textContent = currentYear;
 $(function() {
     $("#id_check_in_date").datepicker({
         minDate: 1,  // Minimum date is tomorrow
+        dateFormat: 'dd/mm/yy', // Set the date format to UK format
         onSelect: function(selectedDate) {
             // Parse the selected check-in date
-            var checkInDate = new Date(selectedDate);
+            var checkInDate = $.datepicker.parseDate("dd/mm/yy", selectedDate);
             
             // Calculate the minimum check-out date (check-in date + 1 days)
             var minCheckOutDate = new Date(checkInDate);
@@ -25,7 +26,8 @@ $(function() {
     }).attr('readonly', 'readonly');
     
     $("#id_check_out_date").datepicker({
-        minDate: 2  // Initial minimum date is 2 days from today
+        minDate: 2,  // Initial minimum date is 2 days from today
+        dateFormat: 'dd/mm/yy' // Set the date format to UK format
     }).attr('readonly', 'readonly');
 });
 

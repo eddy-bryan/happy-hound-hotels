@@ -10,11 +10,13 @@ class SearchForm(forms.Form):
 
     check_in_date = forms.DateField(
         label='Check-in Date',
-        widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'MM/DD/YYYY'})
+        widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'DD/MM/YYYY'}),
+        input_formats=['%d/%m/%Y']
     )
     check_out_date = forms.DateField(
         label='Check-out Date',
-        widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'MM/DD/YYYY'})
+        widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'DD/MM/YYYY'}),
+        input_formats=['%d/%m/%Y']
     )
     num_pets = forms.ChoiceField(
         choices=NUM_PETS_CHOICES,
@@ -28,11 +30,13 @@ class BookingForm(forms.ModelForm):
 
     check_in_date = forms.DateField(
         label='Check-in Date',
-        widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'MM/DD/YYYY'})
+        widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'DD/MM/YYYY'}),
+        input_formats=['%d/%m/%Y']
     )
     check_out_date = forms.DateField(
         label='Check-out Date',
-        widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'MM/DD/YYYY'})
+        widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'DD/MM/YYYY'}),
+        input_formats=['%d/%m/%Y']
     )
     num_pets = forms.ChoiceField(
         choices=NUM_PETS_CHOICES,
