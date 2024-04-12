@@ -4,7 +4,7 @@
 {% block sidebar %}
 
 <!-- This search bar is a modified design template from Colorlib (https://colorlib.com) -->
-<div class="position-relative">
+<div class="fixed-top d-md-block d-none clear-nav">
     <div class="container m-0">
         <div class="row vw-100">
             <div class="booking-form bg-white shadow">
@@ -66,16 +66,16 @@
 
 {% block content %}
 
-<div class="container mt-10 clear-header-search">
+<div class="container mt-10 clear-nav-search-md">
     {% for kennel in kennels %}
-    <div class="container d-md-flex d-none p-2 kennel-list-item">
+    <div class="container d-md-flex d-none m-2 kennel-list-item bg-light">
         <div class="row">
             <div class="col-lg-3 col-6">
                 <div class="row">
                     {% if "placeholder" in kennel.kennel_image.url %}
-                    <img src="{% static 'images/default-kennel.png' %}" alt="placeholder image" class="kennel_list_image img-fluid">
+                    <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{% static 'images/default-kennel.png' %}" alt="placeholder image" class="kennel_list_image img-fluid"></a>
                     {% else %}
-                    <img src="{{ kennel.kennel_image.url }}" alt="{{ kennel.name }}" class="img-fluid">
+                    <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{{ kennel.kennel_image.url }}" alt="{{ kennel.name }}" class="img-fluid"></a>
                     {% endif %}
                 </div>
                 <div class="row d-lg-none">
@@ -88,7 +88,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="row">
+                <div class="row mt-2">
                     <div class="col-lg-9 col-12">
                         <h2><a href="{% url 'kennel_detail' kennel.slug %}">{{ kennel.name }}</a></h2>
                         <p>{{ kennel.description }}</p>
@@ -102,13 +102,13 @@
         </div>
     </div>
 
-    <div class="container d-md-none p-2 kennel-list-item">
+    <div class="container d-md-none p-2 kennel-list-item bg-light">
         <div class="row">
             <div class="row d-md-flex">
                 {% if "placeholder" in kennel.kennel_image.url %}
-                <img src="{% static 'images/default-kennel.png' %}" alt="placeholder image" class="kennel_list_image img-fluid">
+                <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{% static 'images/default-kennel.png' %}" alt="placeholder image" class="kennel_list_image img-fluid"></a>
                 {% else %}
-                <img src="{{ kennel.kennel_image.url }}" alt="{{ kennel.name }}" class="img-fluid">
+                <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{{ kennel.kennel_image.url }}" alt="{{ kennel.name }}" class="img-fluid"></a>
                 {% endif %}
             </div>
             <div class="col">

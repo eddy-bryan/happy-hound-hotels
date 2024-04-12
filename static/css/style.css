@@ -66,17 +66,20 @@ header {
     background-repeat: no-repeat;
 }
 
-.clear-header {
+.clear-nav {
 	margin-top: 71px;
 }
 
-.clear-header-search {
+.clear-nav-search-md {
 	margin-top: 204px;
 }
 
 @media (max-width: 768px) {
-    .clear-header-search {
-		margin-top: 595px;
+    .clear-nav-md {
+        margin-top: 71px;
+    }
+	.clear-nav-search-md {
+		margin-top: 71px !important;
 	}
 }
 
@@ -106,13 +109,21 @@ footer a:hover {
 }
 
 .kennel-list-item {
-	background-color: #E1E0E1;
-	border-radius: var(--bs-border-radius);
+	border-radius: 10px;
 }
 
 .kennel_list_image {
 	height: fit-content;
 	width: auto;
+}
+
+.kennel-list-item a {
+	text-decoration: none;
+	color: #FF9F1C;
+}
+
+.kennel-list-item a:hover {
+	color: #000000;
 }
 
 #slogan {
@@ -174,7 +185,7 @@ footer a:hover {
 }
 
 .booking-form {
-	border-radius: var(--bs-border-radius);
+	border-radius: 10px;
 }
 
 .booking-form>form .row.no-margin {

@@ -28,3 +28,28 @@ $(function() {
         minDate: 2  // Initial minimum date is 2 days from today
     }).attr('readonly', 'readonly');
 });
+
+
+$('#search').on('click', function(event) {
+    // Get the input fields and error messages
+    var checkInDateField = $('#id_check_in_date');
+    var checkOutDateField = $('#id_check_out_date');
+    var checkInError = $('#check-in-error');
+    var checkOutError = $('#check-out-error');
+
+    // Check if the check-in date is empty or equal to the placeholder text
+    if ($.trim(checkInDateField.val()) === '' || $.trim(checkInDateField.val()) === checkInDateField.attr('placeholder')) {
+        checkInError.addClass('d-block').removeClass('d-none');
+        event.preventDefault(); // Prevent form submission
+    } else {
+        checkInError.removeClass('d-block').addClass('d-none');
+    }
+
+    // Check if the check-out date is empty or equal to the placeholder text
+    if ($.trim(checkOutDateField.val()) === '' || $.trim(checkOutDateField.val()) === checkOutDateField.attr('placeholder')) {
+        checkOutError.addClass('d-block').removeClass('d-none');
+        event.preventDefault(); // Prevent form submission
+    } else {
+        checkOutError.removeClass('d-block').addClass('d-none');
+    }
+});
