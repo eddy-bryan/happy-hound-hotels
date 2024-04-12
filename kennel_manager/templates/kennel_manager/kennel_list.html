@@ -71,7 +71,7 @@
     <div class="container ms-auto d-md-block d-none p-0 m-3 kennel-list-item bg-light">
         <div class="row">
             <div class="col-lg-3 col-6">
-                <div class="kennel-image-container">
+                <div class="aspect-ratio-square kennel-image-container">
                     <div class="row">
                         {% if "placeholder" in kennel.kennel_image.url %}
                         <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{% static 'images/default-kennel.png' %}"
@@ -107,7 +107,7 @@
     </div>
 
     <div class="container d-md-none d-block ms-auto p-0 m-3 kennel-list-item bg-light">
-        <div class="kennel-image-container">
+        <div class="aspect-ratio-square kennel-image-container">
             <div class="row d-md-flex">
                 {% if "placeholder" in kennel.kennel_image.url %}
                 <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{% static 'images/default-kennel.png' %}"
