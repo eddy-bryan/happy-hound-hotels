@@ -73,9 +73,11 @@
             <div class="col-lg-3 col-6">
                 <div class="row">
                     {% if "placeholder" in kennel.kennel_image.url %}
-                    <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{% static 'images/default-kennel.png' %}" alt="placeholder image" class="kennel_list_image img-fluid"></a>
+                    <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{% static 'images/default-kennel.png' %}"
+                            alt="placeholder image" class="kennel_list_image img-fluid"></a>
                     {% else %}
-                    <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{{ kennel.kennel_image.url }}" alt="{{ kennel.name }}" class="img-fluid"></a>
+                    <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{{ kennel.kennel_image.url }}"
+                            alt="{{ kennel.name }}" class="img-fluid"></a>
                     {% endif %}
                 </div>
                 <div class="row d-lg-none">
@@ -125,5 +127,3 @@
 </div>
 
 {% endblock %}
-
-

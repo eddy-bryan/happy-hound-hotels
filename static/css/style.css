@@ -22,12 +22,11 @@ header {
 	color: #616161;
 }
 
-.allauth-card {
+.max-width-form {
 	max-width: 400px;
-	box-shadow: 0px 2px 15px #616161;
 }
 
-.allauth-card p, .allauth-card li {
+.form-card p, .form-card li {
 	margin-left: 10%;
 	margin-right: 10%;
 }
@@ -61,6 +60,14 @@ header {
 #log-out-dog {
     background-color: #ffffff;
 	background-image: url('../images/log-out-dog.jpg');
+	background-size: contain;
+	background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+#book-now-dog {
+    background-color: #ffffff;
+	background-image: url('../images/book-now-dog.jpg');
 	background-size: contain;
 	background-position: bottom right;
     background-repeat: no-repeat;

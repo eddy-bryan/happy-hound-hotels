@@ -113,8 +113,7 @@
         <form id="reviewForm" method="post">
             {{ review_form | crispy }}
             {% csrf_token %}
-            <button id="submitButton" type="submit"
-            class="btn btn-lg btn-submit btn-light">Submit</button>
+            <button id="submitButton" type="submit" class="btn btn-lg btn-submit btn-light">Submit</button>
         </form>
         {% else %}
         <p><a href="{% url 'account_login' %}" class="text-decoration-none">Log in</a> to leave a review</p>
@@ -125,21 +124,21 @@
     <div class="card-body">
         <h3>Reviews:</h3>
         {% for review in reviews %}
-            <div class="p-2">
-                <p class="font-weight-bold">
-                    {{ review.author }}
-                    <span class="font-weight-normal">
-                        {{ review.created_on }}
-                    </span> wrote:
-                </p>
-                <div id="review{{ review.id }}">
-                    {{ review.body | linebreaks }}
-                </div>
-                {% if user.is_authenticated and review.author == user %}
-                    <button class="btn btn-edit btn-outline-secondary" data-review_id="{{ review.id }}">Edit</button>
-                    <button class="btn btn-delete btn-outline-danger" data-review_id="{{ review.id }}">Delete</button>
-                {% endif %}
+        <div class="p-2">
+            <p class="font-weight-bold">
+                {{ review.author }}
+                <span class="font-weight-normal">
+                    {{ review.created_on }}
+                </span> wrote:
+            </p>
+            <div id="review{{ review.id }}">
+                {{ review.body | linebreaks }}
             </div>
+            {% if user.is_authenticated and review.author == user %}
+            <button class="btn btn-edit btn-outline-secondary" data-review_id="{{ review.id }}">Edit</button>
+            <button class="btn btn-delete btn-outline-danger" data-review_id="{{ review.id }}">Delete</button>
+            {% endif %}
+        </div>
         {% endfor %}
     </div>
 </div>
@@ -157,14 +156,14 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a  id="deleteConfirm" href="#" type="button" class="btn btn-danger">Delete</a>
+                <a id="deleteConfirm" href="#" type="button" class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>
 </div>
-    
+
 {% endblock content %}
 
 {% block extras %}
-    <script src="{% static 'js/reviews.js' %}"></script>
+<script src="{% static 'js/reviews.js' %}"></script>
 {% endblock %}
