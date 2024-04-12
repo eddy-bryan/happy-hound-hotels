@@ -68,17 +68,19 @@
 
 <div class="container mt-10 clear-nav-search-md">
     {% for kennel in kennels %}
-    <div class="container ms-auto d-md-block d-none m-3 kennel-list-item bg-light">
+    <div class="container ms-auto d-md-block d-none p-0 m-3 kennel-list-item bg-light">
         <div class="row">
             <div class="col-lg-3 col-6">
-                <div class="row">
-                    {% if "placeholder" in kennel.kennel_image.url %}
-                    <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{% static 'images/default-kennel.png' %}"
-                            alt="placeholder image" class="kennel_list_image img-fluid"></a>
-                    {% else %}
-                    <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{{ kennel.kennel_image.url }}"
-                            alt="{{ kennel.name }}" class="img-fluid"></a>
-                    {% endif %}
+                <div class="kennel-image-container">
+                    <div class="row">
+                        {% if "placeholder" in kennel.kennel_image.url %}
+                        <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{% static 'images/default-kennel.png' %}"
+                                alt="placeholder image" class="kennel-list-image img-fluid"></a>
+                        {% else %}
+                        <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{{ kennel.kennel_image.url }}"
+                                alt="{{ kennel.name }}" class="kennel-list-image img-fluid"></a>
+                        {% endif %}
+                    </div>
                 </div>
                 <div class="row d-lg-none">
                     <div class="col">
@@ -104,15 +106,17 @@
         </div>
     </div>
 
-    <div class="container d-md-none d-block ms-auto m-3 kennel-list-item bg-light">
-        <div class="row d-md-flex">
-            {% if "placeholder" in kennel.kennel_image.url %}
-            <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{% static 'images/default-kennel.png' %}"
-                    alt="placeholder image" class="kennel_list_image img-fluid"></a>
-            {% else %}
-            <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{{ kennel.kennel_image.url }}"
-                    alt="{{ kennel.name }}" class="img-fluid"></a>
-            {% endif %}
+    <div class="container d-md-none d-block ms-auto p-0 m-3 kennel-list-item bg-light">
+        <div class="kennel-image-container">
+            <div class="row d-md-flex">
+                {% if "placeholder" in kennel.kennel_image.url %}
+                <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{% static 'images/default-kennel.png' %}"
+                        alt="placeholder image" class="kennel-list-image img-fluid"></a>
+                {% else %}
+                <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{{ kennel.kennel_image.url }}"
+                        alt="{{ kennel.name }}" class="kennel-list-image img-fluid"></a>
+                {% endif %}
+            </div>
         </div>
         <div class="row">
             <h2><a href="{% url 'kennel_detail' kennel.slug %}">{{ kennel.name }}</a></h2>
