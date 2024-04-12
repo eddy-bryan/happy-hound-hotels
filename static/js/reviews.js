@@ -7,17 +7,9 @@ const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");
 
-
-console.log("reviews.js loaded successfully.")
-
-
 for (let button of editButtons) {
     button.addEventListener("click", (e) => {
         let reviewId = e.target.getAttribute("data-review_id");
-
-        console.log(reviewId)
-        console.log("Edit clicked")
-
         let reviewContent = document.getElementById(`review${reviewId}`).innerText;
         reviewText.value = reviewContent;
         submitButton.innerText = "Update";

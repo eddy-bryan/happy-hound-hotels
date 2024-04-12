@@ -5,58 +5,107 @@
 {% block content %}
 
 <div class="container clear-nav">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-6">
-            {% if "placeholder" in kennel.kennel_image.url %}
-            <img src="{% static 'images/default-kennel.png' %}" alt="placeholder image" class="img-fluid">
-            {% else %}
-            <img src="{{ kennel.kennel_image.url }}" alt="{{ kennel.name }}" class="img-fluid">
-            {% endif %}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-9">
-            <h2>{{ kennel.name }}</h2>
-            <p>{{ kennel.description }}</p>
-        </div>
-        <div class="col-3">
-            <h2>Address</h2>
-            <p>
-                {% if kennel.address_line_2 %}
-                {{ kennel.address_line_1 }},</br>
-                {{ kennel.address_line_2 }},</br>
+    <div class="d-sm-block d-none">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                {% if "placeholder" in kennel.kennel_image.url %}
+                <img src="{% static 'images/default-kennel.png' %}" alt="placeholder image" class="img-fluid">
                 {% else %}
-                {{ kennel.address_line_1 }},</br>
+                <img src="{{ kennel.kennel_image.url }}" alt="{{ kennel.name }}" class="img-fluid">
                 {% endif %}
-                {{ kennel.city }},</br>
-                {{ kennel.county }},</br>
-                {{ kennel.postal_code }}
-            </p>
-            <p>
-                {{ kennel.contact_number }}
-            </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-9">
+                <h2>{{ kennel.name }}</h2>
+                <p>{{ kennel.description }}</p>
+            </div>
+            <div class="col-3">
+                <h2>Address</h2>
+                <p>
+                    {% if kennel.address_line_2 %}
+                    {{ kennel.address_line_1 }},</br>
+                    {{ kennel.address_line_2 }},</br>
+                    {% else %}
+                    {{ kennel.address_line_1 }},</br>
+                    {% endif %}
+                    {{ kennel.city }},</br>
+                    {{ kennel.county }},</br>
+                    {{ kennel.postal_code }}
+                </p>
+                <p>
+                    <strong>Phone:</strong> {{ kennel.contact_number }}
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-9">
+                <p><strong>Price:</strong> £{{ kennel.price_per_night }}</p>
+            </div>
+            <div class="col-3">
+                <a href="{% url 'book_now' kennel_id=kennel.id %}" class="btn button">Book Now</a>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-9">
-            <p><strong>Price:</strong> £{{ kennel.price_per_night }}</p>
+
+    <div class="d-sm-none">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                {% if "placeholder" in kennel.kennel_image.url %}
+                <img src="{% static 'images/default-kennel.png' %}" alt="placeholder image" class="img-fluid">
+                {% else %}
+                <img src="{{ kennel.kennel_image.url }}" alt="{{ kennel.name }}" class="img-fluid">
+                {% endif %}
+            </div>
         </div>
-        <div class="col-3">
-            <a href="{% url 'book_now' kennel_id=kennel.id %}" class="btn button">Book Now</a>
+        <div class="row">
+            <div class="col-12">
+                <h2>{{ kennel.name }}</h2>
+                <p>{{ kennel.description }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h2>Address</h2>
+                <p>
+                    {% if kennel.address_line_2 %}
+                    {{ kennel.address_line_1 }},</br>
+                    {{ kennel.address_line_2 }},</br>
+                    {% else %}
+                    {{ kennel.address_line_1 }},</br>
+                    {% endif %}
+                    {{ kennel.city }},</br>
+                    {{ kennel.county }},</br>
+                    {{ kennel.postal_code }}
+                </p>
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <p>
+                        <strong>Phone:</strong> {{ kennel.contact_number }}
+                    </p>
+                </div>
+                <div class="row">
+                    <p><strong>Price:</strong> £{{ kennel.price_per_night }}</p>
+                </div>
+                <div class="row">
+                    <a href="{% url 'book_now' kennel_id=kennel.id %}" class="btn button">Book Now</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-12">
-        <strong class="text-secondary">
+        <hr>
+    </div>
+    <div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1">
+        <strong class="text-secondary ms-4">
             <i class="bi bi-chat-square-fill"></i> {{ review_count }} reviews
         </strong>
     </div>
-    <div class="col-12">
-        <hr>
-    </div>
 </div>
-<div class="col-8 card mb-4 mt-3">
+<div class="col-lg-8 col-md-10 card mb-4 mt-3 offset-lg-2 offset-md-1">
     <div class="card-body">
         {% if user.is_authenticated %}
         <h3>Leave a review:</h3>
@@ -65,35 +114,33 @@
             {{ review_form | crispy }}
             {% csrf_token %}
             <button id="submitButton" type="submit"
-            class="btn btn-signup btn-lg">Submit</button>
+            class="btn btn-lg btn-submit btn-light">Submit</button>
         </form>
         {% else %}
         <p><a href="{% url 'account_login' %}" class="text-decoration-none">Log in</a> to leave a review</p>
         {% endif %}
     </div>
 </div>
-<div class="row">
-    <div class="col-md-8 card mb-4  mt-3">
+<div class="col-lg-8 col-md-10 card mb-4 mt-3 offset-lg-2 offset-md-1">
+    <div class="card-body">
         <h3>Reviews:</h3>
-        <div class="card-body">
-            {% for review in reviews %}
-                <div class="p-2">
-                    <p class="font-weight-bold">
-                        {{ review.author }}
-                        <span class="font-weight-normal">
-                            {{ review.created_on }}
-                        </span> wrote:
-                    </p>
-                    <div id="review{{ review.id }}">
-                        {{ review.body | linebreaks }}
-                    </div>
-                    {% if user.is_authenticated and review.author == user %}
-                        <button class="btn btn-edit" data-review_id="{{ review.id }}">Edit</button>
-                        <button class="btn btn-delete" data-review_id="{{ review.id }}">Delete</button>
-                    {% endif %}
+        {% for review in reviews %}
+            <div class="p-2">
+                <p class="font-weight-bold">
+                    {{ review.author }}
+                    <span class="font-weight-normal">
+                        {{ review.created_on }}
+                    </span> wrote:
+                </p>
+                <div id="review{{ review.id }}">
+                    {{ review.body | linebreaks }}
                 </div>
-            {% endfor %}
-        </div>
+                {% if user.is_authenticated and review.author == user %}
+                    <button class="btn btn-edit btn-outline-secondary" data-review_id="{{ review.id }}">Edit</button>
+                    <button class="btn btn-delete btn-outline-danger" data-review_id="{{ review.id }}">Delete</button>
+                {% endif %}
+            </div>
+        {% endfor %}
     </div>
 </div>
 
