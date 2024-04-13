@@ -32,7 +32,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     "8000-eddybryan-happyhoundhot-zw0te6aqijt.ws-eu110.gitpod.io",
-    ".herokuapp.com"
+    ".herokuapp.com",
+    "ui.dev"
 ]
 
 
