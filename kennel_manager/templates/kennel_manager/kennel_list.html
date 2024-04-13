@@ -78,10 +78,10 @@
                         {% if "placeholder" in kennel.kennel_image.url %}
                         <a href="{% url 'kennel_detail' kennel.slug %}"><img
                                 src="{% static 'images/default-kennel.png' %}" alt="placeholder image"
-                                class="kennel-list-image img-fluid"></a>
+                                class="kennel-list-image img-fluid" aria-label="Kennel Detail"></a>
                         {% else %}
                         <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{{ kennel.kennel_image.url }}"
-                                alt="{{ kennel.name }}" class="kennel-list-image img-fluid"></a>
+                                alt="{{ kennel.name }}" class="kennel-list-image img-fluid" aria-label="Kennel Detail"></a>
                         {% endif %}
                     </div>
                 </div>
@@ -118,10 +118,10 @@
             <div class="row">
                 {% if "placeholder" in kennel.kennel_image.url %}
                 <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{% static 'images/default-kennel.png' %}"
-                        alt="placeholder image" class="kennel-list-image img-fluid"></a>
+                        alt="placeholder image" class="kennel-list-image img-fluid" aria-label="Kennel Detail"></a>
                 {% else %}
                 <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{{ kennel.kennel_image.url }}"
-                        alt="{{ kennel.name }}" class="kennel-list-image img-fluid"></a>
+                        alt="{{ kennel.name }}" class="kennel-list-image img-fluid" aria-label="Kennel Detail"></a>
                 {% endif %}
             </div>
         </div>
