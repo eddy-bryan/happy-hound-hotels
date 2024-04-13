@@ -1,110 +1,340 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Happy Hound Hotels
 
-Welcome Edward Bryan,
+![Homepage responsive design](readme/images/home.png)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+[Happy Hound Hotels](https://happy-hound-hotels-738781c0298e.herokuapp.com/) is a web platform designed to cater to the needs of pet owners and pet accommodation providers. The website facilitates the booking of kennels for pets, allowing users to find suitable accommodations for their furry friends while they are away. Whether it's a weekend getaway or an extended trip, "Happy Hound Hotels" aims to ensure that pets are well cared for in their owners' absence.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
+## Contents
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+- [Mission Statement](#mission-statement)
+- [User Experience (UX)](#user-experience-ux)
+    - [User Stories](#user-stories)
+    - [Structure](#structure)
+- [Agile Development Approach](#agile-development-approach)
+- [Design Overview](#design-overview)
+- [Technology Stack](#technology-stack)
+- [Data Models](#data-models)
+- [Features](#features)
+- [Testing](#testing)
+    - [User Stories Testing](#user-stories-testing)
+    - [Unit Tests](#unit-tests)
+    - [Code Validator Checks](#code-validator-checks)
+    - [Lighthouse](#lighthouse)
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+# Mission Statement
 
-Another blue button should appear to click: _Open Browser_.
+Happy Hound Hotels is dedicated to offering pet owners the utmost convenience in finding top-notch accommodations for their beloved pets. Our platform serves as a user-friendly hub where pet owners can effortlessly connect with reputable kennels, ensuring their furry companions receive the care and attention they deserve while they are away. By prioritising convenience and fostering trust between owners and accommodation providers, Happy Hound Hotels aims to create a seamless and stress-free experience for all parties involved, promoting peace of mind and satisfaction throughout the pet care journey.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+A link to the live website can be found [here](https://happy-hound-hotels-738781c0298e.herokuapp.com/).
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+# User Experience (UX)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## User Stories
 
-To log into the Heroku toolbelt CLI:
+### Target Audience
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+The primary target audiences for Happy Hound Hotels are pet owners and pet accommodation providers. Pet owners rely on the platform to find suitable accommodations for their furry companions when they're away, seeking convenience, reliability, and peace of mind. On the other hand, pet accommodation providers, including boarding kennels and pet hotels, utilize the website to attract pet owners and streamline their booking processes. By catering to the needs of these two key groups, Happy Hound Hotels aims to create a seamless and efficient booking experience for both pet owners and accommodation providers alike.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Implemented User Stories
 
-------
+This section outlines the user stories that have been successfully incorporated into the project, detailing the functionality and features currently available to users.
 
-## Release History
+### As a site user I can...
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- make an account so that I can book a kennel.
+- search for kennels so that I can book my pet in.
+- view a list of kennels so that I can see available places to stay for my pet.
+- view a kennel page so that I can book a stay for my pet.
+- view a list of reviews so that I can see which kennels are good to stay at.
+- leave a review so that other users can see what people thought about their pet's stay.
+- edit or delete a review so that I can rectify any mistakes I may have made.
+- book a kennel so that my pet/s have somewhere to stay while I am away.
 
-**September 20 2023:** Update Python version to 3.9.17.
+### As a site admin I can...
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- register a kennel so that users can book their pet's stay.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Future User Stories
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+Here, you'll find user stories that are planned for implementation in future updates of the project. These stories represent potential enhancements and additions to the website's functionality.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### As a site user I can...
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- arrange the kennel list order so that I can sort kennels by my preferred method.
+- rate kennels so that other users can see how good or bad they are.
+- create a profile so that I can store contact details and pets.
+- add pets to my account so that I can store their information for later.
+- create pet profiles so that I can store vaccination documents and vet details.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### As a site admin I can...
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- approve vaccination documents so that legitimacy is maintained.
+- flag inappropriate or inaccurate reviews so that users do not receive false or offensive information.
+- respond to reviews so that I can assure customers that any issues have been resolved.
+- approve bookings so that site users can take their pet's to the kennel.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Structure
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Home Page
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+![Homepage responsive design](readme/images/home.png)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+The homepage of Happy Hound Hotels keeps things simple yet effective. At the center, there's a handy search bar where users can easily find kennels for their pets by entering check-in/check-out dates and the number of pets. The inviting prompt 'Find a kennel...' encourages users to start their search. Below, a catchy slogan adds a friendly touch.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Register Page
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![Register page responsive design](readme/images/register.png)
 
-------
+The registration page on Happy Hound Hotels is your gateway to accessing all the platform has to offer. Here, users can create their personal accounts in just a few simple steps. By providing basic information and creating a secure password, users gain access to features like booking kennels and leaving reviews.
 
-## FAQ about the uptime script
+### Login Page
 
-**Why have you added this script?**
+![Login page responsive design](readme/images/login.png)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+The login page on Happy Hound Hotels provides registered users with access to their accounts and the full range of platform features. With just a few clicks, users can securely log in using their credentials, gaining instant access to booking kennels and leaving reviews.
 
-**How will this affect me?**
+### Kennel List Page
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+![Kennel list page responsive design](readme/images/kennel-list.png)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+The kennel list page on Happy Hound Hotels displays a curated list of available kennels that can accommodate the user's selected number of pets during the specified dates. Users can easily browse through the list to find suitable accommodations for their furry companions. Each listing provides essential details about the kennel, such as location, a small description and the price per night.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Kennel Detail Page
 
-**So….?**
+![Kennel detail page responsive design](readme/images/kennel-detail.png)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+The kennel detail page on Happy Hound Hotels provides comprehensive information about each kennel, including its address, contact number, and detailed description. Users can explore reviews from other pet owners to get a sense of the kennel's quality and reputation. Additionally, the page offers a convenient link to the booking page displaying a simple form, allowing users to easily transition from browsing to initiating the booking process.
 
-**Can I opt out?**
+[^ Back to top ^](#happy-hound-hotels)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+# Agile Development Approach
 
-**Anything more?**
+Happy Hound Hotels adopts an Agile development approach, which emphasizes iterative development, flexibility, and customer collaboration. Agile methodology allows for continuous improvement and the ability to adapt to changing requirements throughout the development process.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### User Story Labels
 
----
+User stories in the Happy Hound Hotels project are categorized using different labels to prioritize features and functionalities. These labels include:
 
-Happy coding!
+- Must-Have: Essential features that are critical for the core functionality of the application and must be implemented in the initial release.
+- Should-Have: Important features that enhance the user experience or provide additional value but are not essential for the core functionality.
+- Would-Have: Features that are desirable but can be deferred to future releases if time or resources are limited.
+- Could-Have: Nice-to-have features that are considered low priority and may be implemented if there is extra time or resources available.
+
+![User story labels](readme/images/user-story-labels.png)
+
+These labels help prioritize user stories based on their importance and impact on the overall project goals.
+
+[^ Back to top ^](#happy-hound-hotels)
+
+
+# Design Overview
+
+The design of Happy Hound Hotels focuses on simplicity, usability, and a pet-friendly aesthetic. Leveraging existing resources and customisation, the project achieves a visually appealing and intuitive user experience.
+
+### Search Bar Design
+
+The styling for the search bar, a central element of the homepage and kennel list page, was originally sourced from Colorlib.com and since been extensively customised to meet the specific needs of the project. Its functionality allows users to easily select check-in and check-out dates and specify the number of pets, facilitating a seamless booking process.
+
+### Frameworks and Tools
+
+- **Bootstrap:** The project primarily utilises the Bootstrap framework for its responsive layout and pre-designed components, ensuring consistency and compatibility across devices.
+
+- **jQuery UI:** jQuery UI was employed for the datepicker functionality, enhancing user interaction and providing an intuitive way for users to select dates during the booking process.
+
+- **Custom CSS:** Where necessary, custom CSS styles were applied to enhance the design and tailor specific elements to match the project's branding and visual identity.
+
+### Image Sources
+
+- **Pixabay:** High-quality images featured throughout the website were sourced from Pixabay, a platform offering free stock photos, illustrations, and vectors. These images contribute to the overall aesthetic and ambiance of the site.
+
+### Logo Design
+
+- **Logo.com:** The project's distinctive logo was created using Logo.com, a user-friendly platform for designing professional logos. The logo reflects the pet-friendly nature of the website and serves as a recognizable symbol of the brand.
+
+### Favicon Creation
+
+- **Favicon.io:** Custom favicons were generated using Favicon.io, a favicon generator tool that simplifies the process of creating small, iconic images displayed in web browser tabs. These favicons provide a cohesive branding experience and enhance the website's visual identity.
+
+[^ Back to top ^](#happy-hound-hotels)
+
+
+# Technology Stack
+
+### Backend Framework
+
+- Django: Django served as the primary backend framework, providing robust features for building web applications, including user authentication, data management, and routing.
+
+### Frontend Framework
+
+- Bootstrap: Bootstrap was utilised extensively for frontend development, offering a collection of CSS and JavaScript components for building responsive and mobile-first websites.
+
+### Database Management
+
+- Code Institute's Database Maker: The Code Institute's Database Maker streamlined database management by providing a straightforward interface for users to input their email addresses and receive a new Postgres database URL. This simplified the process of accessing and managing the project's database, enhancing efficiency and convenience for developers.
+
+### Cloud Storage
+
+- Cloudinary Storage: Cloudinary Storage facilitated the storage and management of media files, such as images, in the cloud.
+
+### Authentication and Authorisation
+
+- Django Allauth: Django Allauth provided authentication and authorisation functionalities, allowing users to register, log in, and manage their accounts securely.
+
+### Frontend Design
+
+- jQuery UI: jQuery UI was used for the datepicker feature, enhancing the user experience by providing a user-friendly interface for selecting dates.
+
+### Development Environment
+
+- GitPod: GitPod served as the development environment, providing an integrated development environment (IDE) accessible via the browser.
+
+### Deployment Platform
+
+- Heroku: Heroku was utilized as the deployment platform, allowing for the hosting and deployment of the web application.
+
+### Additional Libraries and Tools
+
+- Crispy Forms: Crispy Forms enhanced form rendering in Django, providing elegant and customisable form layouts.
+- Crispy Bootstrap5: Crispy Bootstrap5 extended the functionality of Crispy Forms by integrating Bootstrap 5 styling.
+- Cloudinary: Cloudinary offered cloud-based image and video management services, facilitating seamless media handling within the application.
+
+[^ Back to top ^](#happy-hound-hotels)
+
+
+# Data Models
+
+This section outlines the structure of the data models used in the Happy Hound Hotels project.
+
+### Kennel
+
+| Field          | Type          |
+|----------------|---------------|
+| PK             | INT           |
+| name           | STR           |
+| slug           | SLUG          |
+| kennel_image   | CLOUDINARY    |
+| description    | TEXT          |
+| address_line_1 | STR           |
+| address_line_2 | STR (optional)|
+| city           | STR           |
+| county         | STR           |
+| postal_code    | STR           |
+| contact_number | STR           |
+| price_per_night| DECIMAL       |
+| spaces         | INT           |
+
+### Booking
+
+| Field           | Type               |
+|-----------------|--------------------|
+| PK              | INT                |
+| customer        | ForeignKey(User)   |
+| num_pets        | INT                |
+| kennel          | ForeignKey(Kennel) |
+| check_in_date   | DATE               |
+| check_out_date  | DATE               |
+
+### Review
+
+| Field         | Type                |
+|---------------|---------------------|
+| PK            | INT                 |
+| kennel        | ForeignKey(Kennel)  |
+| author        | ForeignKey(User)    |
+| body          | TEXT                |
+| created_on    | DATETIME            |
+
+[^ Back to top ^](#happy-hound-hotels)
+
+
+# Features
+
+This section highlights the key features of the Happy Hound Hotels website.
+
+### Authentication
+
+The website provides user authentication functionality, allowing users to securely register and login to their accounts.
+
+- **User Authentication:** Users can log in securely using their email and password.
+
+  ![Login Form](readme/images/login-form.png)
+
+- **User Registration:** New users can register for an account by providing basic information and creating a password.
+
+  ![Register Form](readme/images/register-form.png)
+
+### Navbar
+
+The website includes a responsive navigation bar (navbar) that allows users to navigate between different sections of the website easily.
+
+#### Navbar for larger screen sizes:
+![Navbar 1](readme/images/navbar-1.png)
+
+#### Navbar for smaller screen sizes:
+![Navbar 2](readme/images/navbar-2.png)
+
+### Search Bar
+
+A user-friendly search bar is available on the homepage, enabling users to search for available kennels based on their check-in and check-out dates, as well as the number of pets.
+
+#### Search bar for larger screen sizes:
+![Search Bar 1](readme/images/search-bar-1.png)
+
+#### Search bar for smaller screen sizes:
+![Search Bar 2](readme/images/search-bar-2.png)
+
+### Kennel List
+
+The Kennel List page displays a list of available kennels that match the user's search criteria. Users can view essential information about each kennel, such as its name, description, and price per night.
+
+![Kennel List](readme/images/kennel-list-detail.png)
+
+### Kennel Detail
+
+The Kennel Detail page provides detailed information about a specific kennel, including its address, contact number, and customer reviews. Users can read reviews from other customers and leave their own feedback.
+
+![Kennel Detail](readme/images/kennel-detail-detail.png)
+
+### Booking Form
+
+On the Kennel Detail page, users can find a link to a booking form where they can specify the check-in date, check-out date, and number of pets for their stay. Once submitted, the booking form allows users to book the selected kennel.
+
+![Booking Form](readme/images/booking-form.png)
+
+### Footer
+
+The website features a footer section that provides additional information and links, such as social media links, and copyright details.
+
+![Footer](readme/images/footer.png)
+
+[^ Back to top ^](#happy-hound-hotels)
+
+
+# Testing
+
+This section covers the testing processes and tools used to ensure the quality and functionality of the Happy Hound Hotels website.
+
+## User Stories Testing
+
+The table below summarises the testing of user stories, comparing the expected outcomes with the actual outcomes.
+
+| User Story | Expected Outcome  | Actual Outcome |
+|------------|-------------------|----------------|
+| Admin can register a kennel | Admin should be able to successfully register a kennel. | Admin successfully registers a kennel. |
+| User can register for an account | User should be able to successfully register for an account. | User successfully registers for an account. |
+| User can search for kennels | User should be able to search for kennels using the search bar. | Search functionality allows users to search for kennels as expected. |
+| User can view a list of kennels | User should see a list of available kennels displayed on the page. | Kennel list displays correctly, showing available kennels as expected. |
+| User can view a kennel page | User should be able to view a page showing detailed information about a specific kennel. | Kennel detail page shows accurate information about the selected kennel. |
+| User can book a kennel | User should be able to successfully book a kennel using the booking form. | Booking form allows users to book kennels successfully. |
+| User can view a list of reviews | User should see a list of reviews displayed on the kennel detail page. | Reviews list displays all available reviews as expected. |
+| User can leave a review | User should be able to leave a review for a kennel. | Review submission form allows users to leave reviews as expected. |
+| User can edit or delete reviews | User should be able to edit or delete their own reviews. | Editing and deleting reviews functionality works as expected. |
+
+## Unit Tests
+
+
