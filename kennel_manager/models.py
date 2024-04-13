@@ -5,6 +5,24 @@ from datetime import date
 from cloudinary.models import CloudinaryField
 
 class Kennel(models.Model):
+    """
+    Model representing a kennel.
+
+    Attributes:
+        name (str): Name of the kennel.
+        slug (str): Slugified version of the kennel name.
+        kennel_image (CloudinaryField): Image field for the kennel.
+        description (str): Description of the kennel.
+        address_line_1 (str): Address line 1 of the kennel.
+        address_line_2 (str): Address line 2 of the kennel.
+        city (str): City of the kennel.
+        county (str): County of the kennel.
+        postal_code (str): Postal code of the kennel.
+        contact_number (str): Contact number of the kennel.
+        price_per_night (Decimal): Price per night of the kennel.
+        spaces (int): Number of available spaces in the kennel.
+    """
+
     name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=50, unique=True, blank=True)
     kennel_image = CloudinaryField('image', default='placeholder')
@@ -20,16 +38,33 @@ class Kennel(models.Model):
 
 
     def __str__(self):
+        """
+        Return string representation of the kennel.
+        """
         return f"{self.name} with {self.spaces} spaces based in {self.city} for £{self.price_per_night} per night"
 
 
     def save(self, *args, **kwargs):
+        """
+        Override save method to generate slug from name if not provided.
+        """
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
 
 class Booking(models.Model):
+    """
+    Model representing a booking.
+
+    Attributes:
+        customer (User): User who made the booking.
+        num_pets (int): Number of pets included in the booking.
+        kennel (Kennel): Kennel booked for the stay.
+        check_in_date (date): Date of check-in.
+        check_out_date (date): Date of check-out.
+    """
+
     customer = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     num_pets = models.IntegerField()
     kennel = models.ForeignKey(Kennel, on_delete=models.CASCADE)
@@ -38,10 +73,16 @@ class Booking(models.Model):
 
 
     def __str__(self):
+        """
+        Return string representation of the booking.
+        """
         return f"Booking for {self.customer} for {self.num_pets} from {self.check_in_date} until {self.check_out_date}"
 
 
     def is_space_available(self):
+        """
+        Check if there are available spaces for the booking.
+        """
         booked_spaces = Booking.objects.filter(
             kennel=self.kennel,
             check_in_date__lte=self.check_out_date,
@@ -73,6 +114,16 @@ class Booking(models.Model):
 
 
 class Review(models.Model):
+    """
+    Model representing a review.
+
+    Attributes:
+        kennel (Kennel): Kennel being reviewed.
+        author (User): Author of the review.
+        body (str): Content of the review.
+        created_on (datetime): Date and time when the review was created.
+    """
+
     kennel = models.ForeignKey(
         Kennel,
         on_delete=models.CASCADE,
@@ -90,4 +141,7 @@ class Review(models.Model):
         ordering = ["created_on"]
     
     def __str__(self):
+        """
+        Return string representation of the review.
+        """
         return f"Review for {self.kennel} by {self.author}"

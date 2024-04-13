@@ -5,8 +5,10 @@
 {% block content %}
 
 <div class="container clear-nav-kennel-detail">
+    <!-- Layout for larger screen sizes -->
     <div class="d-sm-block d-none">
         <div class="row justify-content-center">
+            <!-- Reduce image size on larger screens -->
             <div class="col-12 col-md-6">
                 <div class="aspect-ratio-square kennel-image-container">
                     {% if "placeholder" in kennel.kennel_image.url %}
@@ -52,6 +54,7 @@
         </div>
     </div>
 
+    <!-- Layout for small screen sizes -->
     <div class="d-sm-none">
         <div class="row justify-content-center">
             <div class="col-12">
@@ -103,6 +106,7 @@
         </div>
     </div>
 </div>
+
 <div class="col-12">
     <hr>
 </div>

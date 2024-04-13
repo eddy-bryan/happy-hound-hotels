@@ -8,7 +8,9 @@ var currentYear = new Date().getFullYear();
 document.getElementById("currentYear").textContent = currentYear;
 
 
+// jQuery function to initialize datepicker for check-in and check-out dates
 $(function() {
+    // Initialize datepicker for check-in date
     $("#id_check_in_date").datepicker({
         minDate: 1,  // Minimum date is tomorrow
         dateFormat: 'dd/mm/yy', // Set the date format to UK format
@@ -23,15 +25,17 @@ $(function() {
             // Update minDate option of check-out date picker
             $("#id_check_out_date").datepicker("option", "minDate", minCheckOutDate);
         }
-    }).attr('readonly', 'readonly');
+    }).attr('readonly', 'readonly'); // Set input field to readonly mode
     
+    // Initialize datepicker for check-out date
     $("#id_check_out_date").datepicker({
         minDate: 2,  // Initial minimum date is 2 days from today
         dateFormat: 'dd/mm/yy' // Set the date format to UK format
-    }).attr('readonly', 'readonly');
+    }).attr('readonly', 'readonly'); // Set input field to readonly mode
 });
 
 
+// Event listener for search button click
 $('#search').on('click', function(event) {
     // Get the input fields and error messages
     var checkInDateField = $('#id_check_in_date');

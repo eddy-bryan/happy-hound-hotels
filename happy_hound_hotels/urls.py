@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("accounts/", include("allauth.urls")),
-    path("", include("kennel_manager.urls")),
+    path("admin/", admin.site.urls),  # Admin site URL
+    path("accounts/", include("allauth.urls")),  # Allauth authentication URLs
+    path("", include("kennel_manager.urls")),  # Include URLs from kennel_manager app
 ]

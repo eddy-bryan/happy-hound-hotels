@@ -7,14 +7,20 @@ from .models import Kennel, Booking, Review
 from .forms import SearchForm, BookingForm, ReviewForm
 
 def home(request):
+    """
+    View function for the home page.
+
+    Renders the home page with search form and available kennels based on search criteria.
+    """
     if request.method == 'GET':
         form = SearchForm(request.GET)
         if form.is_valid():
+            # Process the search form data
             check_in_date = form.cleaned_data['check_in_date']
             check_out_date = form.cleaned_data['check_out_date']
             num_pets = int(form.cleaned_data['num_pets'])
 
-            # Filter the queryset based on search criteria
+            # Filter available kennels based on search criteria
             available_kennels = []
             for kennel in Kennel.objects.all():
                 booking_within_dates = Booking.objects.filter(
@@ -34,11 +40,17 @@ def home(request):
 
 
 def kennel_detail(request, slug):
+    """
+    View function for the kennel detail page.
+
+    Renders the kennel detail page with kennel information, reviews, and a form to submit a review.
+    """
     kennel = get_object_or_404(Kennel, slug=slug)
     reviews = kennel.reviews.all().order_by("-created_on")
     review_count = kennel.reviews.all().count()
 
     if request.method == 'POST':
+        # Process the review submission form
         review_form = ReviewForm(data=request.POST)
         if review_form.is_valid():
             review = review_form.save(commit=False)
@@ -65,8 +77,13 @@ def kennel_detail(request, slug):
 
 
 def review_edit(request, slug, review_id):
-    if request.method == "POST":
+    """
+    View function for editing a review.
 
+    Allows authenticated users to edit their reviews.
+    """
+    if request.method == "POST":
+        # Process the review edit form submission
         queryset = Kennel.objects.all()
         kennel = get_object_or_404(queryset, slug=slug)
         review = get_object_or_404(Review, pk=review_id)
@@ -84,11 +101,17 @@ def review_edit(request, slug, review_id):
 
 
 def review_delete(request, slug, review_id):
+    """
+    View function for deleting a review.
+
+    Allows authenticated users to delete their reviews.
+    """
     queryset = Kennel.objects.all()
     kennel = get_object_or_404(queryset, slug=slug)
     review = get_object_or_404(Review, pk=review_id)
 
     if review.author == request.user:
+        # Delete the review if the authenticated user is the author
         review.delete()
         messages.add_message(request, messages.SUCCESS, 'Review deleted successfully.')
     else:
@@ -99,6 +122,11 @@ def review_delete(request, slug, review_id):
 
 @login_required
 def book_now(request, kennel_id):
+    """
+    View function for booking a kennel.
+
+    Allows authenticated users to book a kennel.
+    """
     kennel = get_object_or_404(Kennel, pk=kennel_id)
     
     if request.method == 'POST':
@@ -108,6 +136,7 @@ def book_now(request, kennel_id):
             check_out_date = form.cleaned_data['check_out_date']
             num_pets = form.cleaned_data['num_pets']
 
+            # Create a new booking
             booking = Booking.objects.create(
                 customer=request.user,
                 kennel=kennel,
@@ -125,4 +154,9 @@ def book_now(request, kennel_id):
 
 
 def booking_success(request):
+    """
+    View function for booking success page.
+
+    Renders the booking success page after a successful booking.
+    """
     return render(request, 'kennel_manager/booking_success.html')

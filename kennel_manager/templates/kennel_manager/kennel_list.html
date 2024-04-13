@@ -68,20 +68,24 @@
 
 <div class="container mt-10 clear-nav-search-md">
     {% for kennel in kennels %}
+    <!-- Layout for larger screen sizes -->
     <div class="container ms-auto d-md-block d-none p-0 m-3 kennel-list-item bg-light">
         <div class="row">
+            <!-- Change size for large screen sizes -->
             <div class="col-lg-3 col-6">
                 <div class="aspect-ratio-square kennel-image-container">
                     <div class="row">
                         {% if "placeholder" in kennel.kennel_image.url %}
-                        <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{% static 'images/default-kennel.png' %}"
-                                alt="placeholder image" class="kennel-list-image img-fluid"></a>
+                        <a href="{% url 'kennel_detail' kennel.slug %}"><img
+                                src="{% static 'images/default-kennel.png' %}" alt="placeholder image"
+                                class="kennel-list-image img-fluid"></a>
                         {% else %}
                         <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{{ kennel.kennel_image.url }}"
                                 alt="{{ kennel.name }}" class="kennel-list-image img-fluid"></a>
                         {% endif %}
                     </div>
                 </div>
+                <!-- Relocate city and price on large screen sizes -->
                 <div class="row d-lg-none">
                     <div class="col">
                         <p><strong>City:</strong> {{ kennel.city }}</p>
@@ -93,10 +97,12 @@
             </div>
             <div class="col">
                 <div class="row mt-2">
+                    <!-- Change size for large screen sizes -->
                     <div class="col-lg-9 col-12">
                         <h2><a href="{% url 'kennel_detail' kennel.slug %}">{{ kennel.name }}</a></h2>
                         <p>{{ kennel.description }}</p>
                     </div>
+                    <!-- City and price relocated for large screen sizes -->
                     <div class="col-3 d-lg-block d-none">
                         <p><strong>City:</strong> {{ kennel.city }}</p>
                         <p><strong>Price:</strong> £{{ kennel.price_per_night }}</p>
@@ -106,9 +112,10 @@
         </div>
     </div>
 
+    <!-- Alternative layout for smaller screen sizes -->
     <div class="container d-md-none d-block ms-auto p-0 m-3 kennel-list-item bg-light">
         <div class="aspect-ratio-square kennel-image-container">
-            <div class="row d-md-flex">
+            <div class="row">
                 {% if "placeholder" in kennel.kennel_image.url %}
                 <a href="{% url 'kennel_detail' kennel.slug %}"><img src="{% static 'images/default-kennel.png' %}"
                         alt="placeholder image" class="kennel-list-image img-fluid"></a>
