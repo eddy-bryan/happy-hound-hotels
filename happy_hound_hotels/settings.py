@@ -33,7 +33,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "8000-eddybryan-happyhoundhot-zw0te6aqijt.ws-eu110.gitpod.io",
     ".herokuapp.com",
-    "ui.dev"
+    "https://ui.dev/amiresponsive?url=https://happy-hound-hotels-738781c0298e.herokuapp.com/"
 ]
 
 
