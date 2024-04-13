@@ -10,6 +10,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Happy Hound Hotels offers top-quality pet boarding services for dogs. Our spacious kennels, experienced staff, and personalised care ensure that your furry friend feels safe and loved while you're away. Book now!">
+    <meta name="keywords" content="pet boarding, dog kennel, pet hotel, animal care, pet accommodation, pet resort">
+    <meta name="author" content="Happy Hound Hotels">
     <title>Document</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -42,10 +45,10 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto">
                         {% if user.is_authenticated %}
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link" href="{% url 'account_logout' %}" aria-label="Logout">Logout</a>
                         {% else %}
-                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link" href="{% url 'account_signup' %}" aria-label="Register">Register</a>
+                        <a class="nav-link" href="{% url 'account_login' %}" aria-label="Login">Login</a>
                         {% endif %}
                     </div>
                 </div>
