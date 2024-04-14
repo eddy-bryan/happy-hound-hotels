@@ -343,7 +343,7 @@ The table below summarises the testing of user stories, comparing the expected o
 
 ### Python
 
-Below screenshots show validator checks for each file that includes python code within this project.
+Below screenshots show validator checks for each file that includes python code within this project. All code has been passed through [CI Python Linter](https://pep8ci.herokuapp.com/) with no errors found.
 
 ### happy_hound_hotels/...
 
@@ -352,7 +352,7 @@ Below screenshots show validator checks for each file that includes python code 
 
 #### settings.py
 ![settings.py validator check](readme/images/validator-checks/python/happy-hound-hotels/python-validator-settings.png)
-**NOTE:** 5 validator errors appear due to AllAuth and SECRET_KEY variables being very long.
+**NOTE:** 4 validator errors appear due to AllAuth password validator variables being very long.
 
 #### urls.py
 ![urls.py validator check](readme/images/validator-checks/python/happy-hound-hotels/python-validator-urls.png)
@@ -379,6 +379,17 @@ Below screenshots show validator checks for each file that includes python code 
 
 #### views.py
 ![views.py validator check](readme/images/validator-checks/python/kennel-manager/python-validator-views.png)
+
+### JavaScript
+
+Below screenshots show validator checks for each file that includes JavaScript code within this project. All code has been passed through [JSHint](https://jshint.com/) with no errors found.
+
+#### reviews.js
+![reviews.js validator check](readme/images/validator-checks/js/jshint-reviews.png)
+**NOTE:** All warnings shown relate to complaints about ES6 syntax.
+
+#### script.js
+![script.js validator check](readme/images/validator-checks/js/jshint-script.png)
 
 
 ## Lighthouse
