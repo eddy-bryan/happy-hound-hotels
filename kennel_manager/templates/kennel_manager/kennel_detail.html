@@ -30,13 +30,13 @@
                 <h2>Address</h2>
                 <p>
                     {% if kennel.address_line_2 %}
-                    {{ kennel.address_line_1 }},</br>
-                    {{ kennel.address_line_2 }},</br>
+                    {{ kennel.address_line_1 }},<br>
+                    {{ kennel.address_line_2 }},<br>
                     {% else %}
-                    {{ kennel.address_line_1 }},</br>
+                    {{ kennel.address_line_1 }},<br>
                     {% endif %}
-                    {{ kennel.city }},</br>
-                    {{ kennel.county }},</br>
+                    {{ kennel.city }},<br>
+                    {{ kennel.county }},<br>
                     {{ kennel.postal_code }}
                 </p>
                 <p>
@@ -80,13 +80,13 @@
                 <h2>Address</h2>
                 <p>
                     {% if kennel.address_line_2 %}
-                    {{ kennel.address_line_1 }},</br>
-                    {{ kennel.address_line_2 }},</br>
+                    {{ kennel.address_line_1 }},<br>
+                    {{ kennel.address_line_2 }},<br>
                     {% else %}
-                    {{ kennel.address_line_1 }},</br>
+                    {{ kennel.address_line_1 }},<br>
                     {% endif %}
-                    {{ kennel.city }},</br>
-                    {{ kennel.county }},</br>
+                    {{ kennel.city }},<br>
+                    {{ kennel.county }},<br>
                     {{ kennel.postal_code }}
                 </p>
             </div>
@@ -166,7 +166,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a id="deleteConfirm" href="#" type="button" class="btn btn-danger" aria-label="Delete">Delete</a>
+                <a id="deleteConfirm" href="#" class="btn btn-danger" aria-label="Delete">Delete</a>
             </div>
         </div>
     </div>
