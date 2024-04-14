@@ -335,6 +335,8 @@ The table below summarises the testing of user stories, comparing the expected o
 | User can leave a review | User should be able to leave a review for a kennel. | Review submission form allows users to leave reviews as expected. |
 | User can edit or delete reviews | User should be able to edit or delete their own reviews. | Editing and deleting reviews functionality works as expected. |
 
+[^ Back to top ^](#happy-hound-hotels)
+
 ## Unit Tests
 
 
@@ -345,8 +347,20 @@ The table below summarises the testing of user stories, comparing the expected o
 
 Below screenshots show validator checks for each file that includes HTML code within this project. All code has been passed through [W3 Markup Validation Service](https://validator.w3.org/) HTML validator with no errors found.
 
-#### base.html
-![base.html validator check](readme/images/validator-checks/)
+#### Home Page
+![Home page validator check](readme/images/validator-checks/html/html-validator-home.png)
+
+#### Kennel List
+![Kennel list validator check](readme/images/validator-checks/html/html-validator-kennel-list.png)
+
+#### Kennel Detail
+![Kennel detail validator check](readme/images/validator-checks/html/html-validator-kennel-detail.png)
+
+#### Booking Form
+![Booking form validator check](readme/images/validator-checks/html/html-validator-booking-form.png)
+
+#### Booking Success
+![Booking form validator check](readme/images/validator-checks/html/html-validator-booking-success.png)
 
 ### CSS
 
@@ -404,6 +418,8 @@ Below screenshots show validator checks for each file that includes JavaScript c
 
 #### script.js
 ![script.js validator check](readme/images/validator-checks/js/jshint-script.png)
+
+[^ Back to top ^](#happy-hound-hotels)
 
 
 ## Lighthouse
