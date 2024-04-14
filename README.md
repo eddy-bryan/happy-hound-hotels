@@ -315,6 +315,18 @@ The website features a footer section that provides additional information and l
 
 ![Footer](readme/images/footer.png)
 
+### Potential Future Features
+  
+- **User Profile for Contact Details**: Develop user profiles to allow users to manage their contact details, facilitating seamless communication with kennel owners and administrators.
+  
+- **Pet Profile with Vaccine Docs and Vet Info**: Introduce a pet profile feature where users can upload their pet's vaccination documents and store vet contact information for easy access and management.
+  
+- **Kennel Ratings**: Incorporate a rating system for kennels, allowing users to provide feedback and ratings based on their experiences, enhancing transparency and assisting other users in making informed decisions.
+  
+- **Sort Feature for Kennel List**: Add sorting options to the kennel list, enabling users to sort kennels alphabetically (A-Z, Z-A), by price (ascending, descending), and possibly by distance.
+
+- **Arrange Kennels by Distance**: Implement functionality to arrange kennels based on their proximity to the user's location, potentially utilising Google Maps integration for accurate distance calculation.
+
 [^ Back to top ^](#happy-hound-hotels)
 
 
