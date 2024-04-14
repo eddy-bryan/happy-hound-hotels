@@ -19,6 +19,7 @@
 - [Testing](#testing)
     - [User Stories Testing](#user-stories-testing)
     - [Unit Tests](#unit-tests)
+    - [Debugging and Issue Resolution](#debugging-and-issue-resolution)
     - [Code Validator Checks](#code-validator-checks)
     - [Lighthouse](#lighthouse)
 - [Deployment](#deployment)
@@ -374,6 +375,57 @@ Below are screenshots showing the results of successful unit tests:
 ![Review Form Tests](readme/images/unit-tests/review-form-tests.png)
 
 We strive to maintain a high level of test coverage to ensure the reliability and stability of the application.
+
+[^ Back to top ^](#happy-hound-hotels)
+
+## Debugging and Issue Resolution
+During the development process, various automated testing procedures were conducted to assess the functionality, usability, and responsiveness of the website. Below are the documented results of these tests, including identified issues and their respective resolutions:
+
+### Review Submission Issue
+
+**Description:**
+
+Users encountered an issue where clicking the review submit button yielded no response, preventing them from submitting their reviews.
+
+**Resolution:**
+
+- Identified and rectified a JavaScript function that was interfering with the submission process.
+- Refactored the JavaScript code to ensure smooth operation of the review submission feature.
+
+### Search Functionality Error
+
+**Description:**
+
+Users reported inaccuracies in search results, leading to frustration and difficulty in finding relevant information.
+
+**Resolution:**
+
+- Conducted a thorough refactoring of the search algorithm to improve accuracy and relevance of search results.
+- Addressed the underlying issue and enhanced user experience.
+
+### Rating Removal Error
+
+**Description:**
+
+Despite removing the rating feature from the reviews model, users encountered errors when attempting to leave reviews.
+
+**Resolution:**
+
+- Executed database migration commands to reset the database schema.
+- Reloaded initial data from fixtures.
+- All issues were resolved upon restarting the server, ensuring smooth functioning of the application without errors related to the removed rating feature.
+
+### Responsive Design Issue
+
+**Description:**
+
+On smaller screen sizes, certain elements of the website's layout were not adjusting properly, causing overlapping and readability issues.
+
+**Resolution:**
+
+- Updated the CSS stylesheets to improve responsiveness and ensure optimal display across various device sizes.
+
+As of the latest update, there are no known bugs remaining, ensuring smooth functionality and optimal user experience.
 
 [^ Back to top ^](#happy-hound-hotels)
 
