@@ -341,6 +341,13 @@ The table below summarises the testing of user stories, comparing the expected o
 
 ## Code Validator Checks
 
+### CSS
+
+Below screenshot shows the validator check for the CSS code within this project. All code has been passed through [W3 Jigsaw](https://jigsaw.w3.org/css-validator/) CSS validator with no errors found.
+
+#### style.css
+![style.css validator check](readme/images/validator-checks/css/css-validator-style.png)
+
 ### Python
 
 Below screenshots show validator checks for each file that includes python code within this project. All code has been passed through [CI Python Linter](https://pep8ci.herokuapp.com/) with no errors found.
