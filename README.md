@@ -38,7 +38,7 @@ A link to the live website can be found [here](https://happy-hound-hotels-738781
 
 ### Target Audience
 
-The primary target audiences for Happy Hound Hotels are pet owners and pet accommodation providers. Pet owners rely on the platform to find suitable accommodations for their furry companions when they're away, seeking convenience, reliability, and peace of mind. On the other hand, pet accommodation providers, including boarding kennels and pet hotels, utilize the website to attract pet owners and streamline their booking processes. By catering to the needs of these two key groups, Happy Hound Hotels aims to create a seamless and efficient booking experience for both pet owners and accommodation providers alike.
+The primary target audiences for Happy Hound Hotels are pet owners and pet accommodation providers. Pet owners rely on the platform to find suitable accommodations for their furry companions when they're away, seeking convenience, reliability, and peace of mind. On the other hand, pet accommodation providers, including boarding kennels and pet hotels, utilise the website to attract pet owners and streamline their booking processes. By catering to the needs of these two key groups, Happy Hound Hotels aims to create a seamless and efficient booking experience for both pet owners and accommodation providers alike.
 
 ### Implemented User Stories
 
@@ -85,7 +85,7 @@ Here, you'll find user stories that are planned for implementation in future upd
 
 ![Homepage responsive design](readme/images/home.png)
 
-The homepage of Happy Hound Hotels keeps things simple yet effective. At the center, there's a handy search bar where users can easily find kennels for their pets by entering check-in/check-out dates and the number of pets. The inviting prompt 'Find a kennel...' encourages users to start their search. Below, a catchy slogan adds a friendly touch.
+The homepage of Happy Hound Hotels keeps things simple yet effective. At the centre, there's a handy search bar where users can easily find kennels for their pets by entering check-in/check-out dates and the number of pets. The inviting prompt 'Find a kennel...' encourages users to start their search. Below, a catchy slogan adds a friendly touch.
 
 ### Register Page
 
@@ -116,11 +116,11 @@ The kennel detail page on Happy Hound Hotels provides comprehensive information 
 
 # Agile Development Approach
 
-Happy Hound Hotels adopts an Agile development approach, which emphasizes iterative development, flexibility, and customer collaboration. Agile methodology allows for continuous improvement and the ability to adapt to changing requirements throughout the development process.
+Happy Hound Hotels adopts an Agile development approach, which emphasises iterative development, flexibility, and customer collaboration. Agile methodology allows for continuous improvement and the ability to adapt to changing requirements throughout the development process.
 
 ### User Story Labels
 
-User stories in the Happy Hound Hotels project are categorized using different labels to prioritize features and functionalities. These labels include:
+User stories in the Happy Hound Hotels project are categorised using different labels to prioritise features and functionalities. These labels include:
 
 - Must-Have: Essential features that are critical for the core functionality of the application and must be implemented in the initial release.
 - Should-Have: Important features that enhance the user experience or provide additional value but are not essential for the core functionality.
@@ -129,7 +129,7 @@ User stories in the Happy Hound Hotels project are categorized using different l
 
 ![User story labels](readme/images/user-story-labels.png)
 
-These labels help prioritize user stories based on their importance and impact on the overall project goals.
+These labels help prioritise user stories based on their importance and impact on the overall project goals.
 
 [^ Back to top ^](#happy-hound-hotels)
 
@@ -156,7 +156,7 @@ The styling for the search bar, a central element of the homepage and kennel lis
 
 ### Logo Design
 
-- **Logo.com:** The project's distinctive logo was created using Logo.com, a user-friendly platform for designing professional logos. The logo reflects the pet-friendly nature of the website and serves as a recognizable symbol of the brand.
+- **Logo.com:** The project's distinctive logo was created using Logo.com, a user-friendly platform for designing professional logos. The logo reflects the pet-friendly nature of the website and serves as a recognisable symbol of the brand.
 
 ### Favicon Creation
 
@@ -197,7 +197,7 @@ The styling for the search bar, a central element of the homepage and kennel lis
 
 ### Deployment Platform
 
-- Heroku: Heroku was utilized as the deployment platform, allowing for the hosting and deployment of the web application.
+- Heroku: Heroku was utilised as the deployment platform, allowing for the hosting and deployment of the web application.
 
 ### Additional Libraries and Tools
 
@@ -553,7 +553,7 @@ The chosen hosting platform for this project was Heroku. Heroku is a cloud platf
 
 ### Deploying With Heroku
 
-The following steps assume that you already have an account with [Cloudinary](https://cloudinary.com/users/login) and therefore have a Cloudinary URL to use. If you do not, please jump to [retrieving your Cloudinary URL](#retrieving-your-cloudinary-url) for a detailled guide:
+The following steps assume that you already have an account with [Cloudinary](https://cloudinary.com/users/login) and therefore have a Cloudinary URL to use. If you do not, please jump to [retrieving your Cloudinary URL](#retrieving-your-cloudinary-url) for a detailed guide:
 
 1. Login or create an account with [Heroku](https://id.heroku.com/login).
 2. Create a new app by navigating to the [apps dashboard](https://dashboard.heroku.com/apps), clicking the top right dropdown menu labelled `New` and selecting `Create new app`. Input your chosen app name in the appropriate field, select your closest region from the dropdown menu and click `Create app`.

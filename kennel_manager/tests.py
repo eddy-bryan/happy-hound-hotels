@@ -189,7 +189,8 @@ class ReviewFormTests(SimpleTestCase):
         self.assertTrue('body' in form.fields)
 
     def test_review_form_required_fields(self):
-        """Test whether the ReviewForm validation fails for missing required fields."""
+        """Test whether the ReviewForm validation fails for missing required
+        fields."""
         form = ReviewForm(data={})
         self.assertFalse(form.is_valid())
         self.assertEqual(form.errors['body'], ['This field is required.'])
