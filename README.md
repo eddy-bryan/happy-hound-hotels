@@ -508,3 +508,63 @@ However, as noted earlier. Due to third-party cookies, any images loaded through
 ![Kennel detail page best practices](readme/images/lighthouse/lighthouse-kennel-detail-cloudinary.png)
 
 [^ Back to top ^](#happy-hound-hotels)
+
+# Deployment
+
+## Heroku
+
+The chosen hosting platform for this project was Heroku. Heroku is a cloud platform that enables developers to build, deploy, and scale web applications quickly and easily, without worrying about infrastructure management. To ensure throrough testing during the development process, the project was deployed early and at regular intervals throughout. The deployment process is covered in detail below.
+
+### Deploying With Heroku
+
+The following steps assume that you already have an account with [Cloudinary](https://cloudinary.com/users/login) and therefore have a Cloudinary URL to use. If you do not, please jump to [retrieving your Cloudinary URL](#retrieving-your-cloudinary-url) for a detailled guide:
+
+1. Login or create an account with [Heroku](https://id.heroku.com/login).
+2. Create a new app by navigating to the [apps dashboard](https://dashboard.heroku.com/apps), clicking the top right dropdown menu labelled `New` and selecting `Create new app`. Input your chosen app name in the appropriate field, select your closest region from the dropdown menu and click `Create app`.
+3. Go to the `Settings` tab within your newly create app, scroll to the Config Vars section and click `Reveal Config Vars`.
+4. Add the following variables to your config vars (**NOTE:** All variables should be added with quotations **removed**):
+
+    | KEY | VALUE |
+    |-----|-------|
+    | `SECRET_KEY` | Your unique secret key from your Django project |
+    | `DATABASE_URL` | Your unique database URL `postgres://<unique_value>` |
+    | `CLOUDINARY_URL` | API Environment Variable from your Cloudinary dashboard `cloudinary://<unique_value>`
+
+5. Navigate to the `Deploy` tab within your Heroku app, scroll to the Deployment method section and select `GitHub`.
+6. Select your repository to connect to and scroll to the Manual deploy section.
+7. `Choose a branch to deploy` from the dropdown menu and click `Deploy Branch`.
+
+
+### Retrieving Your Cloudinary URL
+
+Skip this section if you have already retrieved your Cloudinary URL.
+
+1. Navigate to [Cloudinary](https://cloudinary.com/users/login) and log in or create an account if you do not already have one.
+2. Go to your `Dashboard` by clicking `Programmable Media` from the left panel and selecting `Dashboard`.
+3. Locate your `API environment variable` and click `Copy`. The value that appears after `CLOUDINARY_URL=` is your Cloudinary URL to be used in the deployment process.
+
+[^ Back to Deploying With Heroku ^](#deploying-with-heroku)
+
+[^ Back to top ^](#happy-hound-hotels)
+
+# Credits
+
+## Media Sources
+
+- Images used were provided by [Pixabay](https://pixabay.com/).
+- The logo was designed using a tool on [Logo.com](https://logo.com/).
+- Favicons were generated using a tool on [Favicon.io](https://favicon.io/favicon-converter/).
+- Images were converted to .webp format to reduce page loading times using [Cloudconvert](https://cloudconvert.com/jpg-to-webp).
+
+## Design Templates
+
+- The search bar design used on the homepage and kennel list is a heavily modified version of a [template](https://colorlib.com/wp/template/colorlib-booking-11/) taken from [ColorLib](https://colorlib.com/wp/).
+
+## Resources
+
+- Django [documentation](https://docs.djangoproject.com/en/5.0/)
+- Bootstrap [documentation](https://getbootstrap.com/docs/5.3/)
+- JQuery UI [documentation](https://learn.jquery.com/jquery-ui/)
+- Django girls [tutorials](https://tutorial.djangogirls.org/en/)
+- AllAuth [documentation](https://docs.allauth.org/en/latest/)
+- StackOverflow [forums](https://stackoverflow.com/)
