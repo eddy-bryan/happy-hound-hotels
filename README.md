@@ -21,6 +21,8 @@
     - [Unit Tests](#unit-tests)
     - [Code Validator Checks](#code-validator-checks)
     - [Lighthouse](#lighthouse)
+- [Deployment](#deployment)
+- [Credits](#credits)
 
 
 # Mission Statement
@@ -339,7 +341,41 @@ The table below summarises the testing of user stories, comparing the expected o
 
 ## Unit Tests
 
+### Test Coverage
 
+The test suite includes unit tests for basic views and forms. These tests ensure that key functionalities of the application, such as rendering templates and form validation, work as expected.
+
+### Running Tests
+
+To run the unit tests for this project, navigate to the project directory in your terminal and execute the following command:
+
+```bash
+python manage.py test
+```
+
+This command will execute all the unit tests defined in the tests.py files within the project.
+
+### Test Results
+Below are screenshots showing the results of successful unit tests:
+
+#### Static View Tests
+![Static View Tests](readme/images/unit-tests/static-view-tests.png)
+
+#### Static File Tests
+![Static File Tests](readme/images/unit-tests/static-file-tests.png)
+
+#### Search Form Tests
+![Search Form Tests](readme/images/unit-tests/search-form-tests.png)
+
+#### Booking Form Tests
+![Booking Form Tests](readme/images/unit-tests/booking-form-tests.png)
+
+#### Review Form Tests
+![Review Form Tests](readme/images/unit-tests/review-form-tests.png)
+
+We strive to maintain a high level of test coverage to ensure the reliability and stability of the application.
+
+[^ Back to top ^](#happy-hound-hotels)
 
 ## Code Validator Checks
 
@@ -420,7 +456,6 @@ Below screenshots show validator checks for each file that includes JavaScript c
 ![script.js validator check](readme/images/validator-checks/js/jshint-script.png)
 
 [^ Back to top ^](#happy-hound-hotels)
-
 
 ## Lighthouse
 
@@ -509,6 +544,7 @@ However, as noted earlier. Due to third-party cookies, any images loaded through
 
 [^ Back to top ^](#happy-hound-hotels)
 
+
 # Deployment
 
 ## Heroku
@@ -534,7 +570,6 @@ The following steps assume that you already have an account with [Cloudinary](ht
 6. Select your repository to connect to and scroll to the Manual deploy section.
 7. `Choose a branch to deploy` from the dropdown menu and click `Deploy Branch`.
 
-
 ### Retrieving Your Cloudinary URL
 
 Skip this section if you have already retrieved your Cloudinary URL.
@@ -546,6 +581,7 @@ Skip this section if you have already retrieved your Cloudinary URL.
 [^ Back to Deploying With Heroku ^](#deploying-with-heroku)
 
 [^ Back to top ^](#happy-hound-hotels)
+
 
 # Credits
 
@@ -562,9 +598,12 @@ Skip this section if you have already retrieved your Cloudinary URL.
 
 ## Resources
 
-- Django [documentation](https://docs.djangoproject.com/en/5.0/)
-- Bootstrap [documentation](https://getbootstrap.com/docs/5.3/)
-- JQuery UI [documentation](https://learn.jquery.com/jquery-ui/)
-- Django girls [tutorials](https://tutorial.djangogirls.org/en/)
-- AllAuth [documentation](https://docs.allauth.org/en/latest/)
-- StackOverflow [forums](https://stackoverflow.com/)
+- Django [documentation](https://docs.djangoproject.com/en/5.0/): Official guide for Django, covering basics to advanced topics.
+- Bootstrap [documentation](https://getbootstrap.com/docs/5.3/): Reference for Bootstrap CSS framework, facilitating responsive web design.
+- JQuery UI [documentation](https://learn.jquery.com/jquery-ui/): jQuery-based UI interactions and widgets documentation.
+- Django girls [tutorials](https://tutorial.djangogirls.org/en/): Beginner-friendly tutorials for Django web development.
+- AllAuth [documentation](https://docs.allauth.org/en/latest/): Guide for integrating authentication features in Django projects.
+- StackOverflow [forums](https://stackoverflow.com/): Q&A platform for troubleshooting programming issues.
+- LearnDjango [tutorials](https://learndjango.com/tutorials/): Tutorials and articles for learning Django development.
+
+[^ Back to top ^](#happy-hound-hotels)

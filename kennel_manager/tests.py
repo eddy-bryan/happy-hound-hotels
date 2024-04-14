@@ -67,7 +67,7 @@ class StaticFileTests(SimpleTestCase):
         self.assertEqual(response.status_code, 200)
 
 
-class SearchFormTest(SimpleTestCase):
+class SearchFormTests(SimpleTestCase):
     """
     Test suite for the search form.
 
@@ -110,7 +110,7 @@ class SearchFormTest(SimpleTestCase):
         self.assertFalse(form.is_valid())
 
 
-class BookingFormTest(SimpleTestCase):
+class BookingFormTests(SimpleTestCase):
     """
     Test suite for the booking form.
 
@@ -153,7 +153,7 @@ class BookingFormTest(SimpleTestCase):
         self.assertEqual(form.errors['num_pets'], ['This field is required.'])
 
 
-class ReviewFormTest(SimpleTestCase):
+class ReviewFormTests(SimpleTestCase):
     """
     Test suite for the review form.
 
