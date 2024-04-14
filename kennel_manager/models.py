@@ -4,6 +4,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from datetime import date
 from cloudinary.models import CloudinaryField
 
+
 class Kennel(models.Model):
     """
     Model representing a kennel.
@@ -36,13 +37,12 @@ class Kennel(models.Model):
     price_per_night = models.DecimalField(max_digits=6, decimal_places=2)
     spaces = models.IntegerField()
 
-
     def __str__(self):
         """
         Return string representation of the kennel.
         """
-        return f"{self.name} with {self.spaces} spaces based in {self.city} for £{self.price_per_night} per night"
-
+        return f"{self.name} with {self.spaces} spaces based in {self.city} "
+        f"for £{self.price_per_night} per night"
 
     def save(self, *args, **kwargs):
         """
@@ -71,13 +71,12 @@ class Booking(models.Model):
     check_in_date = models.DateField()
     check_out_date = models.DateField()
 
-
     def __str__(self):
         """
         Return string representation of the booking.
         """
-        return f"Booking for {self.customer} for {self.num_pets} from {self.check_in_date} until {self.check_out_date}"
-
+        return f"Booking for {self.customer} for {self.num_pets} from "
+        f"{self.check_in_date} until {self.check_out_date}"
 
     def is_space_available(self):
         """
@@ -91,26 +90,31 @@ class Booking(models.Model):
 
         return self.kennel.spaces - booked_spaces >= int(self.num_pets)
 
-
     def is_valid_dates(self):
         """
         Check if the booking dates are valid and not in the past.
         """
-        return self.check_in_date > date.today() and self.check_out_date > self.check_in_date
-
+        return (self.check_in_date > date.today()
+                and self.check_out_date > self.check_in_date)
 
     def save(self, *args, **kwargs):
         """
-        Override the save method to validate booking dates and available spaces.
+        Override the save method to validate booking dates and available
+        spaces.
         """
         if self.is_valid_dates() and self.is_space_available():
             super().save(*args, **kwargs)
         else:
-            # Raise validation error if dates are invalid or no space is available
+            # Raise validation error if dates are invalid or no space is
+            # available
             if not self.is_valid_dates():
-                raise ValueError("Booking dates must be valid and not in the past")
+                raise ValueError(
+                    "Booking dates must be valid and not in the past"
+                    )
             elif not self.is_space_available():
-                raise ValueError("No space available for booking within the specified dates")
+                raise ValueError(
+                    "No space available for booking within the specified dates"
+                    )
 
 
 class Review(models.Model):
@@ -139,7 +143,7 @@ class Review(models.Model):
 
     class Meta:
         ordering = ["created_on"]
-    
+
     def __str__(self):
         """
         Return string representation of the review.

@@ -341,6 +341,44 @@ The table below summarises the testing of user stories, comparing the expected o
 
 ## Code Validator Checks
 
+### Python
+
+Below screenshots show validator checks for each file that includes python code within this project.
+
+### happy_hound_hotels/...
+
+#### asgi.py
+![asgi.py validator check](readme/images/validator-checks/python/happy-hound-hotels/python-validator-asgi.png)
+
+#### settings.py
+![settings.py validator check](readme/images/validator-checks/python/happy-hound-hotels/python-validator-settings.png)
+**NOTE:** 5 validator errors appear due to AllAuth and SECRET_KEY variables being very long.
+
+#### urls.py
+![urls.py validator check](readme/images/validator-checks/python/happy-hound-hotels/python-validator-urls.png)
+
+#### wsgi.py
+![wsgi.py validator check](readme/images/validator-checks/python/happy-hound-hotels/python-validator-wsgi.png)
+
+### kennel_manager/...
+
+#### admin.py
+![admin.py validator check](readme/images/validator-checks/python/kennel-manager/python-validator-admin.png)
+
+#### apps.py
+![apps.py validator check](readme/images/validator-checks/python/kennel-manager/python-validator-apps.png)
+
+#### forms.py
+![forms.py validator check](readme/images/validator-checks/python/kennel-manager/python-validator-forms.png)
+
+#### models.py
+![models.py validator check](readme/images/validator-checks/python/kennel-manager/python-validator-models.png)
+
+#### urls.py
+![urls.py validator check](readme/images/validator-checks/python/kennel-manager/python-validator-urls.png)
+
+#### views.py
+![views.py validator check](readme/images/validator-checks/python/kennel-manager/python-validator-views.png)
 
 
 ## Lighthouse
@@ -358,7 +396,7 @@ The home page achieved a lighthouse score of:
 
 See the screenshot below:
 
-![Homepage lighthouse score](readme/images/lighthouse-home.png)
+![Homepage lighthouse score](readme/images/lighthouse/lighthouse-home.png)
 
 ### Register Page
 
@@ -373,7 +411,7 @@ The register page achieved a lighthouse score of:
 
 See the screenshot below:
 
-![Register page lighthouse score](readme/images/lighthouse-register.png)
+![Register page lighthouse score](readme/images/lighthouse/lighthouse-register.png)
 
 ### Login Page
 
@@ -388,7 +426,7 @@ The login page achieved a lighthouse score of:
 
 See the screenshot below:
 
-![Login page lighthouse score](readme/images/lighthouse-login.png)
+![Login page lighthouse score](readme/images/lighthouse/lighthouse-login.png)
 
 ### Kennel List Page
 
@@ -403,11 +441,11 @@ The kennel list page achieved a lighthouse score of:
 
 See the screenshot below:
 
-![Kennel list page lighthouse score](readme/images/lighthouse-kennel-list.png)
+![Kennel list page lighthouse score](readme/images/lighthouse/lighthouse-kennel-list.png)
 
 As shown in the screenshot below, the best practices score is affected due to third-party cookies from Cloudinary. However it is necessary for Cloudinary to be included in the project in order to maximise the user experience.
 
-![Kennel list page best practices](readme/images/lighthouse-kennel-list-cloudinary.png)
+![Kennel list page best practices](readme/images/lighthouse/lighthouse-kennel-list-cloudinary.png)
 
 ### Kennel Detail Page
 
@@ -422,10 +460,10 @@ The kennel list page achieved a lighthouse score of:
 
 See the screenshot below:
 
-![Kennel detail page lighthouse score](readme/images/lighthouse-kennel-detail.png)
+![Kennel detail page lighthouse score](readme/images/lighthouse/lighthouse-kennel-detail.png)
 
 However, as noted earlier. Due to third-party cookies, any images loaded through Cloudinary have a negative impact on the best practices score. Previous screenshot shows a kennel detail page loaded with a placeholder image. The below screenshot shows a kennel detail page loaded with a Cloudinary image.
 
-![Kennel detail page best practices](readme/images/lighthouse-kennel-detail-cloudinary.png)
+![Kennel detail page best practices](readme/images/lighthouse/lighthouse-kennel-detail-cloudinary.png)
 
 [^ Back to top ^](#happy-hound-hotels)

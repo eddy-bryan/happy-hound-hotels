@@ -20,5 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path("admin/", admin.site.urls),  # Admin site URL
     path("accounts/", include("allauth.urls")),  # Allauth authentication URLs
-    path("", include("kennel_manager.urls")),  # Include URLs from kennel_manager app
+    path("", include("kennel_manager.urls")),  # Include kennel_manager URLs
 ]

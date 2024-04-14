@@ -2,15 +2,18 @@ from django import forms
 from .models import Booking, Review
 from datetime import datetime, timedelta
 
+
 class SearchForm(forms.Form):
     """
     Form for searching kennels.
 
     Attributes:
-        NUM_PETS_CHOICES (list): List of tuples representing number of pets choices.
+        NUM_PETS_CHOICES (list): List of tuples representing number of pets
+        choices.
         today (datetime.date): Current date.
         tomorrow (datetime.date): Date representing tomorrow.
-        after_tomorrow (datetime.date): Date representing the day after tomorrow.
+        after_tomorrow (datetime.date): Date representing the day after
+        tomorrow.
     """
 
     # Define choices for number of pets
@@ -24,12 +27,20 @@ class SearchForm(forms.Form):
     # Define form fields
     check_in_date = forms.DateField(
         label='Check-in Date',
-        widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'DD/MM/YYYY'}),
+        widget=forms.DateInput(
+            attrs={
+                'class': 'form-control',
+                'placeholder': 'DD/MM/YYYY'
+                }),
         input_formats=['%d/%m/%Y']
     )
     check_out_date = forms.DateField(
         label='Check-out Date',
-        widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'DD/MM/YYYY'}),
+        widget=forms.DateInput(
+            attrs={
+                'class': 'form-control',
+                'placeholder': 'DD/MM/YYYY'
+                }),
         input_formats=['%d/%m/%Y']
     )
     num_pets = forms.ChoiceField(
@@ -44,7 +55,8 @@ class BookingForm(forms.ModelForm):
     Form for booking kennels.
 
     Attributes:
-        NUM_PETS_CHOICES (list): List of tuples representing number of pets choices.
+        NUM_PETS_CHOICES (list): List of tuples representing number of pets
+        choices.
     """
 
     # Define choices for number of pets
@@ -53,12 +65,20 @@ class BookingForm(forms.ModelForm):
     # Define form fields
     check_in_date = forms.DateField(
         label='Check-in Date',
-        widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'DD/MM/YYYY'}),
+        widget=forms.DateInput(
+            attrs={
+                'class': 'form-control',
+                'placeholder': 'DD/MM/YYYY'
+                }),
         input_formats=['%d/%m/%Y']
     )
     check_out_date = forms.DateField(
         label='Check-out Date',
-        widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'DD/MM/YYYY'}),
+        widget=forms.DateInput(
+            attrs={
+                'class': 'form-control',
+                'placeholder': 'DD/MM/YYYY'
+                }),
         input_formats=['%d/%m/%Y']
     )
     num_pets = forms.ChoiceField(

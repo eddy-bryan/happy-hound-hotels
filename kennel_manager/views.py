@@ -6,11 +6,13 @@ from django.http import HttpResponseRedirect
 from .models import Kennel, Booking, Review
 from .forms import SearchForm, BookingForm, ReviewForm
 
+
 def home(request):
     """
     View function for the home page.
 
-    Renders the home page with search form and available kennels based on search criteria.
+    Renders the home page with search form and available kennels based on
+    search criteria.
     """
     if request.method == 'GET':
         form = SearchForm(request.GET)
@@ -28,12 +30,19 @@ def home(request):
                     check_in_date__lte=check_out_date,
                     check_out_date__gte=check_in_date
                 )
-                booked_spaces = sum(num_pets for booking in booking_within_dates)
+                booked_spaces = sum(
+                    num_pets
+                    for booking in booking_within_dates
+                )
                 if kennel.spaces - booked_spaces >= num_pets:
                     available_kennels.append(kennel)
 
             # Render the kennel_list.html template with filtered queryset
-            return render(request, 'kennel_manager/kennel_list.html', {'kennels': available_kennels, 'form': form})
+            return render(
+                request,
+                'kennel_manager/kennel_list.html',
+                {'kennels': available_kennels, 'form': form}
+            )
     else:
         form = SearchForm()
     return render(request, 'kennel_manager/index.html', {'form': form})
@@ -43,7 +52,8 @@ def kennel_detail(request, slug):
     """
     View function for the kennel detail page.
 
-    Renders the kennel detail page with kennel information, reviews, and a form to submit a review.
+    Renders the kennel detail page with kennel information, reviews, and a form
+    to submit a review.
     """
     kennel = get_object_or_404(Kennel, slug=slug)
     reviews = kennel.reviews.all().order_by("-created_on")
@@ -93,9 +103,17 @@ def review_edit(request, slug, review_id):
             review = review_form.save(commit=False)
             review.kennel = kennel
             review.save()
-            messages.add_message(request, messages.SUCCESS, 'Review updated successfully.')
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Review updated successfully.'
+            )
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating review.')
+            messages.add_message(
+                request,
+                messages.ERROR,
+                'Error updating review.'
+            )
 
     return HttpResponseRedirect(reverse('kennel_detail', args=[slug]))
 
@@ -113,9 +131,17 @@ def review_delete(request, slug, review_id):
     if review.author == request.user:
         # Delete the review if the authenticated user is the author
         review.delete()
-        messages.add_message(request, messages.SUCCESS, 'Review deleted successfully.')
+        messages.add_message(
+            request,
+            messages.SUCCESS,
+            'Review deleted successfully.'
+        )
     else:
-        messages.add_message(request, messages.ERROR, 'Error deleting review.')
+        messages.add_message(
+            request,
+            messages.ERROR,
+            'Error deleting review.'
+        )
 
     return HttpResponseRedirect(reverse('kennel_detail', args=[slug]))
 
@@ -128,7 +154,7 @@ def book_now(request, kennel_id):
     Allows authenticated users to book a kennel.
     """
     kennel = get_object_or_404(Kennel, pk=kennel_id)
-    
+
     if request.method == 'POST':
         form = BookingForm(data=request.POST)
         if form.is_valid():
@@ -144,13 +170,17 @@ def book_now(request, kennel_id):
                 check_out_date=check_out_date,
                 num_pets=num_pets
             )
-                
+
             # Redirect to booking success page after creating the booking
             return redirect('booking_success')
     else:
         form = BookingForm()
-    
-    return render(request, 'kennel_manager/booking_form.html', {'form': form, 'kennel': kennel})
+
+    return render(
+        request,
+        'kennel_manager/booking_form.html',
+        {'form': form, 'kennel': kennel}
+    )
 
 
 def booking_success(request):
