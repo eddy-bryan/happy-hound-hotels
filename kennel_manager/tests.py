@@ -7,8 +7,8 @@ class StaticViewTests(SimpleTestCase):
     """
     Test suite for static views within the project.
 
-    These tests focus on views that render static content or perform basic actions,
-    such as displaying the home page or booking success page.
+    These tests focus on views that render static content or perform basic
+    actions, such as displaying the home page or booking success page.
     """
 
     def test_home_view_reverse(self):
@@ -35,7 +35,10 @@ class StaticViewTests(SimpleTestCase):
     def test_booking_success_template(self):
         """Test whether the booking success page uses the correct template."""
         response = self.client.get(reverse("booking_success"))
-        self.assertTemplateUsed(response, "kennel_manager/booking_success.html")
+        self.assertTemplateUsed(
+            response,
+            "kennel_manager/booking_success.html"
+            )
 
     def test_booking_success_content(self):
         """Test whether the booking success page contains expected content."""
@@ -82,12 +85,22 @@ class SearchFormTests(SimpleTestCase):
         self.assertTrue('num_pets' in form.fields)
 
     def test_search_form_required_fields(self):
-        """Test whether the SearchForm validation fails for missing required fields."""
+        """Test whether the SearchForm validation fails for missing required
+        fields."""
         form = SearchForm(data={})
         self.assertFalse(form.is_valid())
-        self.assertEqual(form.errors['check_in_date'], ['This field is required.'])
-        self.assertEqual(form.errors['check_out_date'], ['This field is required.'])
-        self.assertEqual(form.errors['num_pets'], ['This field is required.'])
+        self.assertEqual(
+            form.errors['check_in_date'],
+            ['This field is required.']
+            )
+        self.assertEqual(
+            form.errors['check_out_date'],
+            ['This field is required.']
+            )
+        self.assertEqual(
+            form.errors['num_pets'],
+            ['This field is required.']
+            )
 
     def test_search_form_valid(self):
         """Test whether the search form is valid with valid data."""
@@ -145,12 +158,22 @@ class BookingFormTests(SimpleTestCase):
         self.assertTrue('num_pets' in form.fields)
 
     def test_booking_form_required_fields(self):
-        """Test whether the BookingForm validation fails for missing required fields."""
+        """Test whether the BookingForm validation fails for missing required
+        fields."""
         form = BookingForm(data={})
         self.assertFalse(form.is_valid())
-        self.assertEqual(form.errors['check_in_date'], ['This field is required.'])
-        self.assertEqual(form.errors['check_out_date'], ['This field is required.'])
-        self.assertEqual(form.errors['num_pets'], ['This field is required.'])
+        self.assertEqual(
+            form.errors['check_in_date'],
+            ['This field is required.']
+            )
+        self.assertEqual(
+            form.errors['check_out_date'],
+            ['This field is required.']
+            )
+        self.assertEqual(
+            form.errors['num_pets'],
+            ['This field is required.']
+            )
 
 
 class ReviewFormTests(SimpleTestCase):
