@@ -344,3 +344,88 @@ The table below summarises the testing of user stories, comparing the expected o
 
 
 ## Lighthouse
+
+### Home Page
+
+The home page achieved a lighthouse score of:
+
+| Category | Score |
+|----------|-------|
+| Performance | 99 |
+| Accessibility | 95 |
+| Best Practices | 100 |
+| SEO | 100 |
+
+See the screenshot below:
+
+![Homepage lighthouse score](readme/images/lighthouse-home.png)
+
+### Register Page
+
+The register page achieved a lighthouse score of:
+
+| Category | Score |
+|----------|-------|
+| Performance | 99 |
+| Accessibility | 95 |
+| Best Practices | 100 |
+| SEO | 100 |
+
+See the screenshot below:
+
+![Register page lighthouse score](readme/images/lighthouse-register.png)
+
+### Login Page
+
+The login page achieved a lighthouse score of:
+
+| Category | Score |
+|----------|-------|
+| Performance | 99 |
+| Accessibility | 95 |
+| Best Practices | 100 |
+| SEO | 100 |
+
+See the screenshot below:
+
+![Login page lighthouse score](readme/images/lighthouse-login.png)
+
+### Kennel List Page
+
+The kennel list page achieved a lighthouse score of:
+
+| Category | Score |
+|----------|-------|
+| Performance | 97 |
+| Accessibility | 95 |
+| Best Practices | 78 |
+| SEO | 100 |
+
+See the screenshot below:
+
+![Kennel list page lighthouse score](readme/images/lighthouse-kennel-list.png)
+
+As shown in the screenshot below, the best practices score is affected due to third-party cookies from Cloudinary. However it is necessary for Cloudinary to be included in the project in order to maximise the user experience.
+
+![Kennel list page best practices](readme/images/lighthouse-kennel-list-cloudinary.png)
+
+### Kennel Detail Page
+
+The kennel list page achieved a lighthouse score of:
+
+| Category | Score |
+|----------|-------|
+| Performance | 97 |
+| Accessibility | 94 |
+| Best Practices | 100 |
+| SEO | 100 |
+
+See the screenshot below:
+
+![Kennel detail page lighthouse score](readme/images/lighthouse-kennel-detail.png)
+
+However, as noted earlier. Due to third-party cookies, any images loaded through Cloudinary have a negative impact on the best practices score. Previous screenshot shows a kennel detail page loaded with a placeholder image. The below screenshot shows a kennel detail page loaded with a Cloudinary image.
+
+![Kennel detail page best practices](readme/images/lighthouse-kennel-detail-cloudinary.png)
+
+[^ Back to top ^](#happy-hound-hotels)
