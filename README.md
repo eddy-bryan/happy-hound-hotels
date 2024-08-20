@@ -2,7 +2,7 @@
 
 ![Homepage responsive design](readme/images/home.png)
 
-[Happy Hound Hotels](https://happy-hound-hotels-738781c0298e.herokuapp.com/) is a web platform designed to cater to the needs of pet owners and pet accommodation providers. The website facilitates the booking of kennels for pets, allowing users to find suitable accommodations for their furry friends while they are away. Whether it's a weekend getaway or an extended trip, "Happy Hound Hotels" aims to ensure that pets are well cared for in their owners' absence.
+[Happy Hound Hotels](https://happy-hound-hotels-b8c2b7667cc8.herokuapp.com/) is a web platform designed to cater to the needs of pet owners and pet accommodation providers. The website facilitates the booking of kennels for pets, allowing users to find suitable accommodations for their furry friends while they are away. Whether it's a weekend getaway or an extended trip, "Happy Hound Hotels" aims to ensure that pets are well cared for in their owners' absence.
 
 
 ## Contents
